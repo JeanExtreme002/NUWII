@@ -1,8 +1,8 @@
 import "@radix-ui/themes/styles.css";
+import './global.css';
 
 import { Theme } from "@radix-ui/themes";
 import type { AppProps } from "next/app";
-import './global.css';
 
 
 export default function App({ Component, pageProps }: AppProps) {

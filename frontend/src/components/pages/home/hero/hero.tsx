@@ -1,10 +1,11 @@
 import { Flex } from "@radix-ui/themes";
-import { Image } from "@/components";
-import styles from "./hero.module.css";
 
-import heroImg from "./assets/hero.png"
-import benefitsImg from "./assets/benefits.png"
+import { Image } from "@/components";
 import { BusinessColors } from "@/lib";
+
+import benefitsImg from "./assets/benefits.png"
+import heroImg from "./assets/hero.png"
+import styles from "./hero.module.css";
 
 export function Hero() {
 

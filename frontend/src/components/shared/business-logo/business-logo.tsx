@@ -1,9 +1,6 @@
 import { Image, ImageProps } from "@/components";
 
-export interface BusinessLogoProps extends Omit<ImageProps, 'src' | 'alt'> {
-}
-
-export function BusinessLogo(props: BusinessLogoProps) {
+export function BusinessLogo(props: Omit<ImageProps, 'src' | 'alt'>) {
   return (
     <Image
       src="/logo.png"

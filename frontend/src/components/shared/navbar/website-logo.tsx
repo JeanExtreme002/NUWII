@@ -1,6 +1,7 @@
 import { Flex, Link } from "@radix-ui/themes";
 
 import { BusinessLogo } from "@/components";
+
 import styles from "./navbar.module.css"
 
 export function WebsiteLogo() {

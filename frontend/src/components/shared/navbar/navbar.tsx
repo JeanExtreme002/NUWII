@@ -1,16 +1,12 @@
-import { Button, Flex, TabNav, DropdownMenu, Separator } from "@radix-ui/themes";
 import {
 	HamburgerMenuIcon,
 } from "@radix-ui/react-icons";
-import { WebsiteLogo } from "./website-logo";
+import { Button, DropdownMenu, Flex, Link, Separator, TabNav } from "@radix-ui/themes";
+
 import styles from "./navbar.module.css"
+import { WebsiteLogo } from "./website-logo";
 
-export interface NavBarProps {
-}
-
-export function NavBar(props: NavBarProps) {
-  const {} = props;
-
+export function NavBar() {
   const getLoginButton = () => {
     return (
       <Button className={styles.loginButton} variant="surface">ÁREA DO CLIENTE</Button>
@@ -32,22 +28,22 @@ export function NavBar(props: NavBarProps) {
           </DropdownMenu.Trigger>
             <DropdownMenu.Content className={styles.dropDownMenu} sideOffset={5}>
               <DropdownMenu.Item>
-                <a href="/">INÍCIO</a>
+                <Link href="/">INÍCIO</Link>
               </DropdownMenu.Item>
               <DropdownMenu.Item>
-                <a href="/">SOBRE</a>
+                <Link href="/">SOBRE</Link>
               </DropdownMenu.Item>
               <DropdownMenu.Item>
-                <a href="/">SERVIÇOS</a>
+                <Link href="/">SERVIÇOS</Link>
               </DropdownMenu.Item>
               <DropdownMenu.Item>
-                <a href="/">PLANOS</a>
+                <Link href="/">PLANOS</Link>
               </DropdownMenu.Item>
               <DropdownMenu.Item>
-                <a href="/">CONTATO</a>
+                <Link href="/">CONTATO</Link>
               </DropdownMenu.Item>
               <DropdownMenu.Item>
-                <a href="/">TRABALHE CONOSCO</a>
+                <Link href="/">TRABALHE CONOSCO</Link>
               </DropdownMenu.Item>
             </DropdownMenu.Content>
         </DropdownMenu.Root>

@@ -1,9 +1,9 @@
 import { Button, Flex, Text } from "@radix-ui/themes";
 import { useRouter } from "next/router";
 
-import { Header } from "@/pages/header";
 import { Icon } from "@/components";
-import { config } from "@/lib";
+import { Header } from "@/pages/header";
+
 import styles from "./not-found.module.css";
 
 
@@ -14,8 +14,6 @@ export function NotFoundPage() {
     event.preventDefault();
     router.push("/");
   };
-
-  const title = config.website.title + " | " + config.website.subtitle;
 
   return (
     <>

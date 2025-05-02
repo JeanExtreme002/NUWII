@@ -1,14 +1,14 @@
 import { Flex } from "@radix-ui/themes";
+
 import { Icon } from "@/components";
-import { Header } from "@/pages/header";
 import { config } from "@/lib/config";
-import styles from "./home.module.css";
+import { Header } from "@/pages/header";
+
 import { Hero } from "./hero";
+import styles from "./home.module.css";
 
 
 export function HomePage() {
-  const title = config.website.title + " | " + config.website.subtitle
-
   return (
     <>
       <Header />

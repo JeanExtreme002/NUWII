@@ -1,9 +1,6 @@
 import {default as NextImg, ImageProps as NextImgProps } from "next/image";
 
-export interface ImageProps extends NextImgProps {
-}
-
-export function Image(props: ImageProps) {
+export function Image(props: NextImgProps) {
     const className = props.className
     props = {className: "", ...props}
 
