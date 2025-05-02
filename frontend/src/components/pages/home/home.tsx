@@ -2,7 +2,7 @@ import { Flex } from "@radix-ui/themes";
 
 import { Icon } from "@/components";
 import { config } from "@/lib/config";
-import { Header } from "@/pages/header";
+import Header from "@/pages/header";
 
 import { Hero } from "./hero";
 import styles from "./home.module.css";

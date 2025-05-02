@@ -2,7 +2,7 @@ import { Button, Flex, Text } from "@radix-ui/themes";
 import { useRouter } from "next/router";
 
 import { Icon } from "@/components";
-import { Header } from "@/pages/header";
+import Header from "@/pages/header";
 
 import styles from "./not-found.module.css";
 

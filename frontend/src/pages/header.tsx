@@ -3,7 +3,7 @@ import Head from "next/head";
 import { NavBar } from "@/components";
 import { config } from "@/lib";
 
-export function Header() {
+export default function Header() {
   const title = config.website.title + " | " + config.website.subtitle;
 
   return (
