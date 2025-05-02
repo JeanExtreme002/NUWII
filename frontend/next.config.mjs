@@ -2,7 +2,11 @@
 const nextConfig = {
   reactStrictMode: true,
   output: 'export', // Next.js 13+ static export mode
+  images: {
+    unoptimized: true, // disables incompatible Image Optimization API
+  },
   trailingSlash: true, // Optional: recommended for gh-pages compatibility
+  basePath: '/NUWII', // Replace with your repo name if not using a custom domain
 };
 
 export default nextConfig;
