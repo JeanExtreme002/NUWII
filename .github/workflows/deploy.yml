@@ -30,4 +30,4 @@ jobs:
       - name: Deploy
         run: |
           git remote set-url origin https://git:${GITHUB_TOKEN}@github.com/${GITHUB_REPOSITORY}.git
-          cd frontend && pnpx gh-pages -d build -u "github-actions-bot <support+actions@github.com>"
+          cd frontend && pnpx gh-pages -d out -u "github-actions-bot <support+actions@github.com>"
