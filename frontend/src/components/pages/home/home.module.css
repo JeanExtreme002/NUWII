@@ -1,0 +1,31 @@
+.root {
+  margin: 0;
+  flex-grow: 1;
+  align-items: center;
+  width: 100%;
+}
+
+.homePage {
+  margin: 0;
+  width: 100%;
+}
+
+.whatsappButton {
+  position: fixed;
+  bottom: 10vh;
+  right: -2vw;
+  background: transparent;
+  border: none;
+  width: 60px;
+  height: 60px;
+  padding: 0;
+  z-index: 9999;
+  cursor: pointer;
+  transition: width 0.2s ease;
+  transition: height 0.2s ease;
+}
+
+.whatsappButton:hover {
+  width: 80px;
+  height: 80px;
+}

@@ -1,0 +1,37 @@
+.container {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  width: 100%;
+}
+
+.leftComponent {
+  flex: 1;
+  align-items: left;
+}
+
+.rightComponent {
+  flex: 1;
+  align-items: flex-end;
+  text-align: right;
+  width: 100%;
+}
+
+.notFoundPage {
+  margin-top: 5vh;
+  align-items: center;
+  justify-content: center;
+  height: 100vh;
+}
+
+.icon {
+  width: 450px;
+  height: 450px;
+}
+
+@media (max-width: 950px) {
+  .icon {
+    width: 300px;
+    height: 300px;
+  }
+}
