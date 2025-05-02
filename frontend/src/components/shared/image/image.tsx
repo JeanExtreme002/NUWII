@@ -1,5 +1,9 @@
 import {default as NextImg, ImageProps as NextImgProps } from "next/image";
 
+// eslint-disable-next-line @typescript-eslint/no-empty-object-type
+export interface ImageProps extends NextImgProps {
+}
+
 export function Image(props: NextImgProps) {
     const className = props.className
     props = {className: "", ...props}
