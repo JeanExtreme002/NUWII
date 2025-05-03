@@ -12,7 +12,7 @@
     "cypress": "cypress open",
     "test:e2e": "pnpm build && start-server-and-test start http://localhost:3000 cypress",
     "predeploy": "pnpm run build",
-    "deploy": "gh-pages -b master -d out --nojekyll --cname www.jeanextreme002.github.io -t true"
+    "deploy": "gh-pages -b master -d out --nojekyll -t true"
   },
   "repository": {
     "type": "",
