@@ -6,7 +6,7 @@ const nextConfig = {
     unoptimized: true, // disables incompatible Image Optimization API
   },
   trailingSlash: true, // Optional: recommended for gh-pages compatibility
-  basePath: '/NUWII', // Replace with your repo name if not using a custom domain
+  basePath: '', // Replace with your repo name if not using a custom domain
 };
 
 export default nextConfig;

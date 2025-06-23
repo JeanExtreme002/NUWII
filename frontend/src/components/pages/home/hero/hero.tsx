@@ -1,11 +1,28 @@
 import { Flex } from "@radix-ui/themes";
-
+import { Button, styled } from "@mui/material"
 import { Image } from "@/components";
-import { BusinessColors } from "@/lib";
+import { BusinessColors, config } from "@/lib";
+import { Send as SendIcon } from '@mui/icons-material';
 
 import benefitsImg from "./assets/benefits.png"
 import heroImg from "./assets/hero.png"
 import styles from "./hero.module.css";
+
+const AnimatedShadowButton = styled(Button)({
+  color: BusinessColors.Blue,
+  borderColor: BusinessColors.Blue,
+  padding: '10px',
+  boxShadow: '0 0 10px 0 #1976d2',
+  animation: 'shadow-move 2s ease-in-out infinite alternate',
+  '@keyframes shadow-move': {
+    '0%': {
+      boxShadow: '0 0 15px 0 #1976d2',
+    },
+    '100%': {
+      boxShadow: '0 0 20px 5px #1976d2',
+    },
+  },
+});
 
 export function Hero() {
 
@@ -39,6 +56,13 @@ export function Hero() {
             </div>
             <div className={styles.benefitsContainer}>
               <Image className={styles.benefitsImage} src={benefitsImg} alt="Benefits"/>
+              <AnimatedShadowButton
+                endIcon={<SendIcon />}
+                variant="outlined" 
+                href={`https://wa.me/${config.phoneNumber}`}
+              >
+                Começar agora
+              </AnimatedShadowButton>
             </div>
           </div>
           <div className={ styles.rightComponent }>
