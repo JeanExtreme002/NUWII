@@ -1,8 +1,9 @@
-import { Flex } from "@radix-ui/themes";
+import { Send as SendIcon } from '@mui/icons-material';
 import { Button, styled } from "@mui/material"
+import { Flex } from "@radix-ui/themes";
+
 import { Image } from "@/components";
 import { BusinessColors, config } from "@/lib";
-import { Send as SendIcon } from '@mui/icons-material';
 
 import benefitsImg from "./assets/benefits.png"
 import heroImg from "./assets/hero.png"
