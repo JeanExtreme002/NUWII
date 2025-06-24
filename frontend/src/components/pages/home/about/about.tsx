@@ -45,10 +45,10 @@ export function About() {
       </Flex>
       <Flex className={ styles.root }>
         <div className={styles.brazilContainer}>
-          <Flex className={ styles.container } style={{alignItems: "center"}}>
-            <div>
+          <Flex>
+            <Flex style={{justifyContent: "center", width: "100%"}}>
               <Image className={styles.brazilImage} src={brazilImage} alt="Hero" />
-            </div>
+            </Flex>
           </Flex>
         </div>
       </Flex>

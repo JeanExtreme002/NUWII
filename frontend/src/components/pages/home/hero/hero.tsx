@@ -12,9 +12,11 @@ import styles from "./hero.module.css";
 const AnimatedShadowButton = styled(Button)({
   color: BusinessColors.Blue,
   borderColor: BusinessColors.Blue,
-  padding: '10px',
+  paddingBlock: '20px',
+  paddingInline: '100px',
   boxShadow: '0 0 10px 0 #1976d2',
   borderRadius: '100px',
+  marginBottom: '1vh',
   animation: 'shadow-move 2s ease-in-out infinite alternate',
   '@keyframes shadow-move': {
     '0%': {
@@ -26,10 +28,18 @@ const AnimatedShadowButton = styled(Button)({
   },
 });
 
+function highlightText(text: string, substring: string) {
+  return text.split(new RegExp(`(${substring})`, 'gi')).map((part, i) =>
+    part.toLowerCase() === substring.toLowerCase() ? <span key={i} style={{color: BusinessColors.Blue, fontSize: "22px"}}>{part}</span> : part
+  );
+}
+
 export function Hero() {
 
   const description1 = `Acreditamos que cada empresa carrega uma história única. E é com responsabilidade, conhecimento e tecnologia que ajudamos você a escrever os próximos capítulos — fazer o seu negócio florescer.`
   const description2 = `Oferecemos uma contabilidade moderna, próxima e descomplicada, com menos burocracia para focar no que realmente importa.`
+
+  const description2Element = highlightText(description2, "contabilidade moderna");  
 
   const getMotivationText = () => {
     return (
@@ -54,10 +64,9 @@ export function Hero() {
             </div>
             <div className={styles.description}>
               <div>{description1}</div>
-              <div>{description2}</div>
+              <div>{description2Element}</div>
             </div>
             <div className={styles.benefitsContainer}>
-              <Image className={styles.benefitsImage} src={benefitsImg} alt="Benefits"/>
               <AnimatedShadowButton
                 endIcon={<SendIcon />}
                 variant="outlined" 
@@ -65,6 +74,7 @@ export function Hero() {
               >
                 Começar agora
               </AnimatedShadowButton>
+              <Image className={styles.benefitsImage} src={benefitsImg} alt="Benefits"/>
             </div>
           </div>
           <div className={ styles.rightComponent }>

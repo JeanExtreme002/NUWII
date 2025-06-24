@@ -44,6 +44,7 @@
   flex-grow: 1;
   width: 100%;
   height: calc(100vh - 70px);
+  max-height: 700px;
   background: linear-gradient(#2c2c2e, #1c1c1e);
   align-items: center;
   justify-content: center;
@@ -92,7 +93,7 @@
   color: white;
   font-family: 'LinearGrotesk-BlackItalic', sans-serif;
   font-size: 35px;
-  margin-bottom: 3vh;
+  margin-bottom: min(3vh, 100px);
   display: none;
 }
 
@@ -102,12 +103,12 @@
   color: white;
   font-family: 'LinearGrotesk-BlackItalic', sans-serif;
   font-size: 20px;
-  margin-top: 5vh;
+  margin-top: min(5vh, 20px);
 }
 
 .description {
   text-align: justify;
-  font-size: 15px;
+  font-size: 18px;
 }
 
 .description > div {
@@ -154,19 +155,24 @@
 
 .benefitsContainer {
   display: flex;
-  flex-direction: row;
+  flex-direction: column;
   align-items: center;
   width: 100%;
-  margin-top: 10vh;
+  margin-top: min(1vh, 100px);
 }
 
 .benefitsImage {
-  width: calc(1278px * 0.20);
-  height: calc(384px * 0.20);
-  margin-right: 4vw;
+  width: calc(1872px * 0.30);
+  height: calc(480px * 0.30);
 }
 
-@media (max-width: 1200px) {
+@media (min-width: 1400px) {
+  .root::after {
+    height: 60px;
+  }
+}
+
+@media (max-width: 1250px) {
   .root {
     height: auto;
   }
@@ -176,13 +182,14 @@
     border-radius: 10%;
   }
   .benefitsContainer {
-    margin-top: 7vh;
+    margin-top: min(7vh, 100px);
   }
 }
 
-@media (max-width: 950px) {
+@media (max-width: 1010px) {
   .root {
     padding-bottom: 50px;
+    max-height: 1200px;
   }
   .benefitsContainer {
     justify-content: center;
@@ -220,20 +227,32 @@
     padding-bottom: 30px;
   }
   .heroImage {
-    width: calc(2387px * 0.15);
-    height: calc(1545px * 0.15);
+    width: calc(2387px * 0.2);
+    height: calc(1545px * 0.2);
     border-radius: 5%;
   }
   .benefitsContainer {
     flex-direction: column;
-    margin-top: 3vh;
+    margin-top: min(3vh, 100px);
   }
   .benefitsImage {
-    width: calc(1278px * 0.15);
-    height: calc(384px * 0.15);
+    width: calc(1872px * 0.25);
+    height: calc(480px * 0.25);
     margin-bottom: 2vh;
   }
   .mobileMotivationText {
     font-size: 25px;
+  }
+}
+
+@media (max-width: 490px) {
+  .heroImage {
+    width: calc(2387px * 0.15);
+    height: calc(1545px * 0.15);
+  }
+  .benefitsImage {
+    width: calc(1872px * 0.2);
+    height: calc(480px * 0.2);
+    margin-bottom: 2vh;
   }
 }
