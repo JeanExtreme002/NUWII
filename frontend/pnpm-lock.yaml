@@ -29,6 +29,9 @@ dependencies:
   '@radix-ui/themes':
     specifier: ^3.1.4
     version: 3.2.1(@types/react-dom@18.3.7)(@types/react@18.3.20)(react-dom@18.3.1)(react@18.3.1)
+  '@react-map/brazil':
+    specifier: ^1.0.9
+    version: 1.0.9(react-dom@18.3.1)(react@18.3.1)
   gh-pages:
     specifier: ^6.1.1
     version: 6.3.0
@@ -2805,6 +2808,16 @@ packages:
       react: 18.3.1
       react-dom: 18.3.1(react@18.3.1)
       react-remove-scroll-bar: 2.3.8(@types/react@18.3.20)(react@18.3.1)
+    dev: false
+
+  /@react-map/brazil@1.0.9(react-dom@18.3.1)(react@18.3.1):
+    resolution: {integrity: sha512-yxwdRMg+T6d2698ScDNGlfXuawJfQ/dy+yX+cBfLXaodtdidcnkBQFvZqL0IL+dpvKJMHoHX6cc9rxOTixpbiw==}
+    peerDependencies:
+      react: '>=16.8.0'
+      react-dom: '>=16.8.0'
+    dependencies:
+      react: 18.3.1
+      react-dom: 18.3.1(react@18.3.1)
     dev: false
 
   /@rtsao/scc@1.1.0:

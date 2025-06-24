@@ -1,6 +1,27 @@
 @font-face {
+    font-family: 'LinearGrotesk-Black';
+    src: url('/fonts/linear-grotesk/LinearGrotesk-Black.otf') format('opentype');
+    font-weight: normal;
+    font-style: normal;
+}
+
+@font-face {
     font-family: 'LinearGrotesk-BlackItalic';
     src: url('/fonts/linear-grotesk/LinearGrotesk-BlackItalic.otf') format('opentype');
+    font-weight: normal;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'LinearGrotesk-Bold';
+    src: url('/fonts/linear-grotesk/LinearGrotesk-Bold.otf') format('opentype');
+    font-weight: normal;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'LinearGrotesk-Light';
+    src: url('/fonts/linear-grotesk/LinearGrotesk-Light.otf') format('opentype');
     font-weight: normal;
     font-style: normal;
 }

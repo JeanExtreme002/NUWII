@@ -1,0 +1,180 @@
+.root {
+  position: relative;
+  display: flex;
+  flex-grow: 1;
+  width: 100%;
+  background: #fff;
+  align-items: center;
+  justify-content: center;
+}
+
+.container {
+  display: flex;
+  flex-grow: 1;
+  max-width: 1250px;
+  padding: 50px;
+  flex-direction: column;
+}
+
+.fade {
+  background: linear-gradient(#00000080, #00000000);
+  width: 100%;
+  min-height: 30px;
+}
+
+.headerTitle {
+  justify-content: center;
+  width: 100%;
+  display: flex;
+  font-family: LinearGrotesk-Black, sans-serif;
+  margin-bottom: 5vh;
+}
+
+.headerTitleDetails {
+  width: 55%;
+  text-align: center;
+  font-family: LinearGrotesk-Light, sans-serif;
+  margin-bottom: 2vh;
+}
+
+.teamImage {
+  width: calc(1022px * 0.5);
+  height: calc(767px * 0.5);
+}
+
+.notesImage {
+  width: calc(1024px * 0.25);
+  height: calc(1536px * 0.25);
+}
+
+.storyContainer {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+}
+
+.storyContent {
+  flex-direction: row;
+}
+
+.storyText {
+  margin-top: 10vh;
+  margin-left: 3vw;
+  text-align: justify;
+  font-family: LinearGrotesk-Bold, sans-serif;
+  margin-bottom: 2vh;
+}
+
+.storyLargeText {
+  margin-left: 3vw;
+  text-align: left;
+  font-family: LinearGrotesk-Bold, sans-serif;
+  font-size: 25px;
+  margin-bottom: 2vh;
+  text-align: justify;
+}
+
+.heroContainer {
+  gap: 50px;
+  align-items: center;
+  max-width: 900px; 
+  justify-content: space-between;
+}
+
+.heroImage {
+  width: calc(1536px * 0.3);
+  height: calc(1536px * 0.25);
+  border-radius: 5%;
+}
+
+.brazilContainer {
+  background: linear-gradient(#fff, #EDEEEE, #f9fafb);
+  width: 100%;
+}
+
+.brazilImage {
+  width: calc(1536px * 0.5);
+  height: calc(1024px * 0.5);
+}
+
+@media (max-width: 1170px) {
+  .storyText {
+    margin-top: 5vh;
+  }
+  .storyContainer {
+    max-width: 660px;
+  }
+  .storyContent {
+    flex-direction: column;
+    align-items: center;
+  }
+  .notesImage {
+    width: calc(1024px * 0.2);
+    height: calc(1536px * 0.2);
+  }
+  .heroContainer {
+    flex-direction: column;
+  }
+  .heroImage {
+    width: calc(1536px * 0.4);
+    height: calc(1024px * 0.4);
+  }
+  .brazilImage {
+    width: calc(1536px * 0.35);
+    height: calc(1024px * 0.35);
+  }
+}
+
+@media (max-width: 650px) {
+  .storyText {
+    margin-top: 3vh;
+  }
+  .storyLargeText {
+    font-size: 25px;
+  }
+  .storyContainer {
+    max-width: 400px;
+  }
+  .teamImage {
+    width: calc(1022px * 0.3);
+    height: calc(767px * 0.3);
+  }
+  .notesImage {
+    width: calc(1024px * 0.15);
+    height: calc(1536px * 0.15);
+  }
+  .heroImage {
+    width: calc(1536px * 0.3);
+    height: calc(1024px * 0.3);
+  }
+  .brazilImage {
+    width: calc(1536px * 0.25);
+    height: calc(1024px * 0.25);
+  }
+}
+
+@media (max-width: 500px) {
+  .heroImage {
+    width: calc(1536px * 0.24);
+    height: calc(1024px * 0.24);
+  }
+}
+
+@media (max-width: 389px) {
+  .storyContainer {
+    max-width: 300px;
+  }
+  .teamImage {
+    width: calc(1022px * 0.3);
+    height: calc(767px * 0.3);
+  }
+  .storyLargeText {
+    font-size: 20px;
+  }
+  .brazilImage {
+    width: calc(1536px * 0.2);
+    height: calc(1024px * 0.2);
+  }
+}

@@ -28,7 +28,7 @@ function SideBar({ isOpen, setIsOpen }: SideBarProps) {
 
   const drawerItems = [
     { label: 'INÍCIO', href: '#home' },
-    { label: 'A NUWII', href: '/' },
+    { label: 'A NUWII', href: '#about' },
     { label: 'SERVIÇOS', href: '/' },
     { label: 'PLANOS', href: '/' },
     { label: 'CONTATO', href: '/' },
@@ -113,7 +113,7 @@ export function NavBar() {
           </div>
           
           <TabNav.Link className={styles.tabNavLink} href="#home">INÍCIO</TabNav.Link>
-          <TabNav.Link className={styles.tabNavLink} href="/">A NUWII</TabNav.Link>
+          <TabNav.Link className={styles.tabNavLink} href="#about">A NUWII</TabNav.Link>
           <TabNav.Link className={styles.tabNavLink} href="/">SERVIÇOS</TabNav.Link>
           <TabNav.Link className={styles.tabNavLink} href="/">PLANOS</TabNav.Link>
           <TabNav.Link className={styles.tabNavLink} href="/">CONTATO</TabNav.Link>
