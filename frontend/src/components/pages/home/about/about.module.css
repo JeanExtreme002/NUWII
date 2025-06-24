@@ -123,7 +123,7 @@
   background-size: 100% 100%;
   pointer-events: none;
   z-index: 2;
-  transform: scale(1.05);
+  transform: scaleY(1.1);
 }
 
 .brazilImage {
@@ -168,6 +168,7 @@
   }
   .storyLargeText {
     font-size: 25px;
+    margin: 0;
   }
   .storyContainer {
     max-width: 400px;
