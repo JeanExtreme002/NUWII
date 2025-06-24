@@ -8,6 +8,16 @@
   justify-content: center;
 }
 
+.darkRoot {
+  background: linear-gradient(#2c2c2e, #1c1c1e);
+  position: relative;
+  display: flex;
+  flex-grow: 1;
+  width: 100%;
+  align-items: center;
+  justify-content: center;
+}
+
 .container {
   display: flex;
   flex-grow: 1;
@@ -59,6 +69,12 @@
   flex-direction: row;
 }
 
+.metricsText {
+  font-size: 22px;
+  text-align: left;
+  font-family: LinearGrotesk-Bold, sans-serif;
+}
+
 .storyText {
   margin-top: 10vh;
   margin-left: 3vw;
@@ -68,6 +84,7 @@
 }
 
 .storyLargeText {
+  color: #fff;
   margin-left: 3vw;
   text-align: left;
   font-family: LinearGrotesk-Bold, sans-serif;
@@ -92,6 +109,21 @@
 .brazilContainer {
   background: linear-gradient(#fff, #EDEEEE, #f9fafb);
   width: 100%;
+}
+
+.brazilContainer::after {
+  content: "";
+  display: block;
+  position: absolute;
+  left: 0;
+  bottom: 0;
+  width: 100%;
+  height: 40px;
+  background: url('data:image/svg+xml;utf8,<svg width="100%" height="40" viewBox="0 0 100 40" preserveAspectRatio="none" xmlns="http://www.w3.org/2000/svg"><path d="M0 20 Q 25 40 50 20 T 100 20 V40 H0 Z" fill="%232c2c2e"/></svg>') no-repeat bottom;
+  background-size: 100% 100%;
+  pointer-events: none;
+  z-index: 2;
+  transform: scale(1.05);
 }
 
 .brazilImage {
@@ -128,6 +160,9 @@
 }
 
 @media (max-width: 650px) {
+  .metricsText {
+    font-size: 17px;
+  }
   .storyText {
     margin-top: 3vh;
   }
@@ -156,6 +191,12 @@
 }
 
 @media (max-width: 500px) {
+  .storyText {
+    font-size: 11px;
+  }
+  .metricsText {
+    font-size: 12px;
+  }
   .heroImage {
     width: calc(1536px * 0.24);
     height: calc(1024px * 0.24);
@@ -163,6 +204,9 @@
 }
 
 @media (max-width: 389px) {
+  .metricsText {
+    font-size: 12px;
+  }
   .storyContainer {
     max-width: 300px;
   }

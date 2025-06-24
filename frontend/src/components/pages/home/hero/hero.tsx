@@ -14,6 +14,7 @@ const AnimatedShadowButton = styled(Button)({
   borderColor: BusinessColors.Blue,
   padding: '10px',
   boxShadow: '0 0 10px 0 #1976d2',
+  borderRadius: '100px',
   animation: 'shadow-move 2s ease-in-out infinite alternate',
   '@keyframes shadow-move': {
     '0%': {

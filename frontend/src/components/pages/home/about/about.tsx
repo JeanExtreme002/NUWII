@@ -30,7 +30,10 @@ export function About() {
               </Flex>
               <Flex style={{justifyContent: "space-between"}}>
                 <div className={styles.storyText}>
-                  Diferente da contabilidade online, onde o cliente  faz tudo sozinho, nós oferecemos um <span style={{color: BusinessColors.Blue}}>serviço digital completo</span>, rápido, simplificado e 100% virtual. Com nossa abordagem digital, <span style={{color: BusinessColors.Blue}}>você ganha liberdade</span> para focar no que realmente importa: fazer seu negócio florescer.
+                  Diferente da contabilidade online, onde o cliente  faz tudo sozinho, nós oferecemos um <span style={{color: BusinessColors.Blue}}>serviço digital completo</span>, rápido, simplificado e 100% virtual. Com nossa abordagem digital, <span style={{color: BusinessColors.Blue}}>você ganha liberdade</span> para focar no que realmente importa: fazer seu negócio florescer.<br/><br/>
+                  <div className={styles.metricsText}>
+                    + de 150 CNPJ <span style={{color: BusinessColors.Blue}}>constituído.</span>
+                  </div>
                 </div>
                 <div style={{flex: 1}}>
                   <Image className={styles.notesImage} src={notesImage} alt="Notes" />
@@ -49,7 +52,7 @@ export function About() {
           </Flex>
         </div>
       </Flex>
-      <Flex className={ styles.root } direction={"column"}>
+      <Flex className={ styles.darkRoot } direction={"column"}>
         <Flex className={ styles.container }>
           <Flex className={styles.storyContainer} direction={"column"}>
             <Flex className={styles.storyContent}>
