@@ -9,5 +9,5 @@ export const config = {
         title: "NUWII",
         subtitle: "Contabilidade e Soluções Empresariais"
     },
-    phoneNumber: "71900000000"
+    phoneNumber: "7131803161"
 };
