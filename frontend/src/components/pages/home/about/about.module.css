@@ -147,6 +147,10 @@
   height: calc(1024px * 0.5);
 }
 
+.servicesButton {
+  text-align: left;
+}
+
 @media (max-width: 1170px) {
   .storyText {
     margin-top: min(5vh, 70px);
@@ -205,6 +209,9 @@
     width: calc(1536px * 0.25);
     height: calc(1024px * 0.25);
   }
+  .servicesButton {
+    font-size: 10px;
+  }
 }
 
 @media (max-width: 500px) {
@@ -217,6 +224,12 @@
   .heroImage {
     width: calc(1536px * 0.24);
     height: calc(1024px * 0.24);
+  }
+}
+
+@media (max-width: 469px) {
+  .servicesButton {
+    font-size: 9px;
   }
 }
 

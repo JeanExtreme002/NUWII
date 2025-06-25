@@ -70,7 +70,7 @@ export function Hero() {
               <AnimatedShadowButton
                 endIcon={<SendIcon />}
                 variant="outlined" 
-                href={`https://wa.me/${config.phoneNumber}`}
+                href={`https://wa.me/${config.phoneNumber}?text=Ol%C3%A1%21%20Venho%20pelo%20site%20da%20NUWII%2C%20e%20possuo%20interesse%20em%20saber%20mais%20sobre%20os%20servi%C3%A7os%20%3A%29`}
               >
                 Começar agora
               </AnimatedShadowButton>

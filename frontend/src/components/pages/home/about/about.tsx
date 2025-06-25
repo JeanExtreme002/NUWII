@@ -1,4 +1,5 @@
 import { Flex, Heading } from "@radix-ui/themes";
+import {Addchart as AddchartIcon} from '@mui/icons-material';
 
 import { Image } from "@/components/shared";
 import { BusinessColors } from "@/lib";
@@ -8,6 +9,7 @@ import brazilImage from "./assets/brazil.png";
 import heroImage from "./assets/hero2.png";
 import notesImage from "./assets/notes.png";
 import teamImage from "./assets/team.svg";
+import { Button } from "@mui/material";
 
 export function About() {
   return (
@@ -34,6 +36,22 @@ export function About() {
                   <div className={styles.metricsText}>
                     + de 150 CNPJ <span style={{color: BusinessColors.Blue}}>constituído.</span>
                   </div>
+                  <Button
+                    className={styles.servicesButton}
+                    variant="outlined"
+                    href="#services"
+                    endIcon={<AddchartIcon />}
+                    sx={{
+                      marginTop: "10px",
+                      color: "#111",
+                      borderRadius: "50px",
+                      backgroundColor: "#fff",
+                    }}
+                  >
+                    <span className={styles.servicesButton}>
+                      Conhecer serviços
+                    </span>
+                  </Button>
                 </div>
                 <div style={{flex: 1}}>
                   <Image className={styles.notesImage} src={notesImage} alt="Notes" />
