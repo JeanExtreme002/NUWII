@@ -1,10 +1,14 @@
 /* eslint-disable react/no-unescaped-entities */
-import { Box, Card, CardContent, Chip, Divider, Paper, Typography } from "@mui/material";
+import { AddTask as AddTaskIcon,AppRegistration as AppRegistrationIcon, AutoAwesome as AutoAwesomeIcon, Category as CategoryIcon } from '@mui/icons-material';
+import { Box, Button, Card, CardContent, Chip, Divider, Paper, Typography } from "@mui/material";
 import { Flex } from "@radix-ui/themes";
 import { ReactNode } from "react";
 
+import { Image } from "@/components";
 import { BusinessColors } from "@/lib";
 
+import investmentImage from "./assets/investment.png"
+import noteImage from "./assets/note.png"
 import styles from "./services.module.css";
 
 const cards = [
@@ -43,7 +47,6 @@ const BusinessServiceCard = (props: BusinessServiceCardProps) => {
       <Card
         className={styles.businessServiceCard}
         sx={{
-          width: 320,
           borderTopLeftRadius: 16,
           borderTopRightRadius: 16,
           borderBottomLeftRadius: 0,
@@ -78,7 +81,7 @@ const BusinessServiceCard = (props: BusinessServiceCardProps) => {
             {props.title1}
           </Typography>
 
-          <Typography variant="body2" align="center" mt={2}>
+          <Typography textAlign={"justify"} variant="body2" align="center" mt={2}>
             {props.description1}
           </Typography>
         </CardContent>
@@ -87,7 +90,6 @@ const BusinessServiceCard = (props: BusinessServiceCardProps) => {
       <Card
         className={styles.businessServiceCard}
         sx={{
-          width: 320,
           borderTopLeftRadius: 0,
           borderTopRightRadius: 0,
           borderBottomLeftRadius: 16,
@@ -95,6 +97,7 @@ const BusinessServiceCard = (props: BusinessServiceCardProps) => {
           backgroundColor: '#f0f0f0',
           color: '#212121',
           boxShadow: 4,
+          flex: 1,
         }}
       >
         <CardContent>
@@ -122,7 +125,7 @@ const BusinessServiceCard = (props: BusinessServiceCardProps) => {
             {props.title2}
           </Typography>
 
-          <Typography variant="body2" align="center" mt={2}>
+          <Typography textAlign={"justify"} variant="body2" align="center" mt={2}>
             {props.description2}
           </Typography>
         </CardContent>
@@ -131,12 +134,66 @@ const BusinessServiceCard = (props: BusinessServiceCardProps) => {
   );
 };
 
+const advantages = [
+  'Abertura de empresa grátis;',
+  'Desenquadramento grátis;',
+  'Planejamento tributário grátis;',
+  'Sem cobrança de 13º salário;',
+  'Atendimento 100% digital, sem sair de casa;',
+  'Atendimento para todo o Brasil.'
+];
+
+export default function AdvantageCardList() {
+  return (
+    <Box className={styles.advantagens} display="flex" flexDirection="column" gap={2} p={2}>
+      {advantages.map((text, index) => (
+        <Card
+          key={index}
+          className={styles.advantageTextContainer}
+          sx={{
+            borderRadius: 50,
+            border: '1px solid black',
+            boxShadow: 6,
+            backgroundColor: '#f9f9f9'
+          }}
+        >
+          <CardContent>
+            <div className={styles.advantageText}>
+              {text.toUpperCase()}
+            </div>
+          </CardContent>
+        </Card>
+      ))}
+    </Box>
+  );
+}
+
+function highlightText(text: string, substrings: string[]) {
+  if (!substrings || substrings.length === 0) return text;
+
+  const pattern = substrings
+    .map(str => str.replace(/[.*+?^${}()|[\]\\]/g, '\\$&'))
+    .join('|');
+  const regex = new RegExp(`(${pattern})`, 'gi');
+
+  return text.split(regex).map((part, i) =>
+    substrings.some(sub =>
+      part.toLowerCase() === sub.toLowerCase()
+    ) ? (
+      <strong key={i} style={{color: BusinessColors.Blue}}>{part}</strong>
+    ) : (
+      part
+    )
+  );
+}
+
+
 export function Services() {
   return (
     <Flex className={styles.root}>
       <Box className={ styles.container }>
         <div className={styles.headerTitle}>
-          Nossos Serviços
+          Nossos <span style={{color: BusinessColors.Blue}}>S</span>erviços <AutoAwesomeIcon sx={{ fontSize: 30 }}/>
         </div>
         <span className={ styles.lightingText }>
           <div className={styles.headerDescription}>
@@ -198,10 +255,48 @@ export function Services() {
                   height: "100%",
                 }}
               >
-                <Typography variant="body2">{card.descricao}</Typography>
+                <Typography variant="body2">
+                  {highlightText(card.descricao, [
+                    "especialista", 
+                    "sem sair de casa",
+                    "empresários e pessoas físicas"
+                  ])}
+                </Typography>
               </Box>
             </Paper>
           ))}
+        </Flex>
+        <Flex direction={"column"}>
+          <div className={styles.advantageHeaderTitle}>
+            Vantagens <AddTaskIcon sx={{ fontSize: 22 }}/>
+          </div>
+          <Flex className={styles.advantageContainer}>
+            <AdvantageCardList/>
+            <Flex align={"end"} direction={"column"} style={{alignItems: "center"}}>
+              <Image className={styles.investmentImage} src={investmentImage} alt="Investment"/>
+              <Flex style={{alignItems: "center"}}>
+                <Button
+                  className={styles.servicesButton}
+                  variant="contained"
+                  href="#plans"
+                  endIcon={<AppRegistrationIcon/>}
+                  sx={{
+                    maxHeight: "50px",
+                    marginRight: "30px",
+                    marginLeft: "50px",
+                    color: "#111",
+                    borderRadius: "50px",
+                    backgroundColor: BusinessColors.LightBlue,
+                  }}
+                >
+                  <span className={styles.plansButton}>
+                    CONHEÇA NOSSOS PLANOS
+                  </span>
+                </Button>
+                <Image className={styles.noteImage} src={noteImage} alt="Note"/>
+              </Flex>
+            </Flex>
+          </Flex>
         </Flex>
         <Divider sx={{ borderBottomWidth: 5 }} className={styles.divider} variant="middle" orientation="horizontal" flexItem>
           <Chip 
@@ -224,6 +319,7 @@ export function Services() {
               },
             }} 
             label="Regimes que atendemos"
+            icon={<CategoryIcon/>}
           />
         </Divider>
         <Flex className={styles.businessServicesContainer}>

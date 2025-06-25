@@ -96,8 +96,8 @@
 }
 
 .serviceCardTitle {
-  font-family: 'LinearGrotesk-BLack', sans-serif;
-  font-size: 17px;
+  font-family: 'LinearGrotesk-Black', sans-serif;
+  font-size: 19px;
 }
 
 .serviceCardsContainer {
@@ -115,6 +115,51 @@
   display: none;
 }
 
+.businessServiceCard {
+  max-width: 600px;
+}
+
+.advantageHeaderTitle {
+  font-family: 'LinearGrotesk-Black', sans-serif;
+  font-size: 40px;
+  margin-top: 40px;
+}
+
+.advantageContainer {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+}
+
+.advantagens {
+  flex: 1;
+}
+
+.advantageTextContainer {
+  max-width: 500px;
+}
+
+.advantageText {
+  text-align: center;
+  font-size: 20px;
+  font-family: 'LinearGrotesk-Black', sans-serif;
+}
+
+.investmentImage {
+  width: calc(1536px * 0.4);
+  height: calc(1024px * 0.4);
+}
+
+.noteImage {
+  width: calc(1024px * 0.2);
+  height: calc(1024px * 0.2);
+}
+
+.plansButton {
+  font-size: 15px;
+}
+
 @media (max-width: 1280px) {
   .serviceCard {
     max-width: 220px;
@@ -128,18 +173,17 @@
   .serviceCard {
     max-width: 350px;
   }
+  .investmentImage {
+    width: calc(1536px * 0.35);
+    height: calc(1024px * 0.35);
+  }
+  .noteImage {
+    width: calc(1024px * 0.15);
+    height: calc(1024px * 0.15);
+  }
 }
 
 @media (max-width: 800px) {
-  .businessServiceCard {
-    max-width: 250px;
-  }
-}
-
-@media (max-width: 650px) {
-  .headerTitle {
-    font-size: 40px;
-  }
   .businessServicesContainerDivider {
     display: none;
   }
@@ -150,10 +194,41 @@
     flex-direction: column;
     gap: 30px;
   }
+  .businessServiceCard {
+    max-width: 500px;
+  }
+  .advantageContainer {
+    flex-direction: column;
+  }
+  .advantageText {
+    min-width: 500px;
+  }
+  .plansButton {
+    font-size: 15px;
+  }
+}
+
+@media (max-width: 650px) {
+  .headerTitle {
+    font-size: 40px;
+  }
+  .advantageText {
+    min-width: 400px;
+  }
+  .investmentImage {
+    width: calc(1536px * 0.2);
+    height: calc(1024px * 0.2);
+  }
+  .plansButton {
+    font-size: 12px;
+  }
 }
 
 @media (max-width: 490px) {
   .headerTitle {
     font-size: 30px;
+  }
+  .advantageText {
+    min-width: 300px;
   }
 }

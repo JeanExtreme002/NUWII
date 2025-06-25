@@ -42,8 +42,8 @@ function SideBar({ isOpen, setIsOpen }: SideBarProps) {
       onClose={toggleDrawer(false)}
       sx={{
       '& .MuiDrawer-paper': {
-        backgroundColor: BusinessColors.Black, // Altere para a cor desejada
-        color: '#fff',           // Opcional: cor do texto
+        backgroundColor: BusinessColors.Black,
+        color: '#fff',
       }
     }}>
       <Box

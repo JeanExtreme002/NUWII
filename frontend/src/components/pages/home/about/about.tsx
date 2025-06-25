@@ -1,5 +1,6 @@
-import { Flex, Heading } from "@radix-ui/themes";
 import {Addchart as AddchartIcon} from '@mui/icons-material';
+import { Button } from "@mui/material";
+import { Flex, Heading } from "@radix-ui/themes";
 
 import { Image } from "@/components/shared";
 import { BusinessColors } from "@/lib";
@@ -9,7 +10,6 @@ import brazilImage from "./assets/brazil.png";
 import heroImage from "./assets/hero2.png";
 import notesImage from "./assets/notes.png";
 import teamImage from "./assets/team.svg";
-import { Button } from "@mui/material";
 
 export function About() {
   return (
