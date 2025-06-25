@@ -1,12 +1,13 @@
-import { Flex } from "@radix-ui/themes";
-import { Box, Typography, Stack, IconButton, Paper } from '@mui/material';
-import PhoneIcon from '@mui/icons-material/Phone';
 import EmailIcon from '@mui/icons-material/Email';
 import InstagramIcon from '@mui/icons-material/Instagram';
-import { BusinessColors, config } from "@/lib";
-import { Image } from "@/components"
-import supportImage from "./assets/support.png"
+import PhoneIcon from '@mui/icons-material/Phone';
+import { Box, IconButton, Paper,Stack, Typography } from '@mui/material';
+import { Flex } from "@radix-ui/themes";
 
+import { Image } from "@/components"
+import { BusinessColors, config } from "@/lib";
+
+import supportImage from "./assets/support.png"
 import styles from "./contact.module.css";
 
 const Footer: React.FC = () => {

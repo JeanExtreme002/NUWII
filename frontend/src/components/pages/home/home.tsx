@@ -3,11 +3,11 @@ import { Flex } from "@radix-ui/themes";
 import Header from "@/pages/header";
 
 import { About } from "./about";
+import { Contact } from "./contact";
 import { Hero } from "./hero";
 import styles from "./home.module.css";
 import { Plans } from "./plans";
 import { Services } from "./services";
-import { Contact } from "./contact";
 
 export function HomePage() {
   return (
