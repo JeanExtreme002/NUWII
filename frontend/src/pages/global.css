@@ -20,6 +20,13 @@
 }
 
 @font-face {
+    font-family: 'LinearGrotesk-Medium';
+    src: url('/fonts/linear-grotesk/LinearGrotesk-Medium.otf') format('opentype');
+    font-weight: normal;
+    font-style: normal;
+}
+
+@font-face {
     font-family: 'LinearGrotesk-Light';
     src: url('/fonts/linear-grotesk/LinearGrotesk-Light.otf') format('opentype');
     font-weight: normal;

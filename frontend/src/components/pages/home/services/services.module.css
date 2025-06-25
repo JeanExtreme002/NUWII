@@ -1,9 +1,69 @@
+@keyframes lighting {
+  0% {
+    transform: translateX(0);
+    text-shadow: none;
+  }
+  50% {
+    transform: translateX(3px);
+    text-shadow: -3px 0 5px #0ff;
+  }
+  100% {
+    transform: translateX(0);
+    text-shadow: none;
+  }
+}
+
+@keyframes lightingLine {
+  0% {
+    left: -100%;
+    opacity: 0;
+  }
+
+  45% {
+    opacity: 1;
+  }
+
+  50% {
+    left: 0%;
+    opacity: 1;
+  }
+
+  55% {
+    opacity: 1;
+  }
+
+  100% {
+    left: 100%;
+    opacity: 0;
+  }
+}
+
+
+.lightingText {
+  position: relative;
+  display: inline-block; /* necessário para a linha acompanhar o texto */
+}
+
+.lightingText::after {
+  content: '';
+  position: absolute;
+  bottom: 0;
+  left: -100%;
+  width: 40%;
+  height: 2px;
+  background-color: #44cbc6;
+  animation: lightingLine 1.5s ease-in-out infinite;
+  animation-delay: -0.2s;
+  pointer-events: none;
+}
+
 .root {
   position: relative;
   display: flex;
   flex-grow: 1;
   width: 100%;
-  background: linear-gradient(#1c1c1e, #2c2c2e);
+  background-color:#fff;
+  justify-content: center;
 }
 
 .container {
@@ -14,14 +74,86 @@
   flex-direction: column;
 }
 
-@media (max-width: 1250px) {
+.divider {
+  padding-top: 50px;
 }
 
-@media (max-width: 1010px) {
+.chip {
+  font-size: 20px;
+}
+
+.headerTitle {
+  font-family: 'LinearGrotesk-Black', sans-serif;
+  font-size: 60px;
+}
+
+.headerDescription {
+  font-family: 'LinearGrotesk-Medium', sans-serif;
+}
+
+.serviceCard {
+  max-width: 280px;
+}
+
+.serviceCardTitle {
+  font-family: 'LinearGrotesk-BLack', sans-serif;
+  font-size: 17px;
+}
+
+.serviceCardsContainer {
+  justify-content: center;
+}
+
+.businessServicesContainer {
+  display: flex;
+  justify-content: center;
+  gap: 50px;
+  margin-top: 30px;
+}
+
+.businessServicesContainerDividerHorizontal {
+  display: none;
+}
+
+@media (max-width: 1280px) {
+  .serviceCard {
+    max-width: 220px;
+  }
+  .serviceCardTitle {
+    font-size: 14px;
+  }
+}
+
+@media (max-width: 1050px) {
+  .serviceCard {
+    max-width: 350px;
+  }
+}
+
+@media (max-width: 800px) {
+  .businessServiceCard {
+    max-width: 250px;
+  }
 }
 
 @media (max-width: 650px) {
+  .headerTitle {
+    font-size: 40px;
+  }
+  .businessServicesContainerDivider {
+    display: none;
+  }
+  .businessServicesContainerDividerHorizontal {
+    display: block;
+  }
+  .businessServicesContainer {
+    flex-direction: column;
+    gap: 30px;
+  }
 }
 
 @media (max-width: 490px) {
+  .headerTitle {
+    font-size: 30px;
+  }
 }

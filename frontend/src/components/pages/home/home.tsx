@@ -4,8 +4,8 @@ import Header from "@/pages/header";
 
 import { About } from "./about";
 import { Hero } from "./hero";
-import { Services } from "./services";
 import styles from "./home.module.css";
+import { Services } from "./services";
 
 
 export function HomePage() {
