@@ -81,12 +81,54 @@
   color: #fff;
 }
 
-@media (max-width: 1250px) {
+.headerTitleDetails {
+  width: 100%;
+  text-align: center;
+  font-family: LinearGrotesk-Medium, sans-serif;
+  font-size: 17px;
+  color: #fff;
+  margin-top: 20px;
 }
 
-@media (max-width: 1010px) {
-  .headerTitle {
-    font-size: 30px;
+.plansContainer {
+  display: grid;
+  gap: 2rem;
+  grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+  flex-direction: row;
+  justify-content: space-between;
+  margin-top: 30px;
+}
+
+.infoText {
+  font-family: LinearGrotesk-Light, sans-serif;
+  font-size: 13px;
+  margin-bottom: 10px;
+}
+
+.recommendationComponent {
+  gap: 50px;
+  margin-top: 50px;
+  justify-content: center;
+}
+
+@media (max-width: 1123px) {
+  .planCard:last-child {
+    min-width: 200%;
+    margin-left: 15px;
+  }
+}
+
+@media (max-width: 850px) {
+  .recommendationComponent {
+    align-items: center;
+    flex-direction: column;
+  }
+}
+
+@media (max-width: 765px) {
+  .planCard:last-child {
+    min-width: auto;
+    margin-left: 0;
   }
 }
 
@@ -94,7 +136,13 @@
   .headerTitle {
     font-size: 25px;
   }
+  .headerTitleDetails {
+    font-size: 12px;
+  }
 }
 
 @media (max-width: 490px) {
+  .headerTitleDetails {
+    font-size: 10px;
+  }
 }
