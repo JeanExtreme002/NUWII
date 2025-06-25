@@ -6,6 +6,7 @@ import { About } from "./about";
 import { Hero } from "./hero";
 import styles from "./home.module.css";
 import { Services } from "./services";
+import { Plans } from "./plans";
 
 
 export function HomePage() {
@@ -23,6 +24,9 @@ export function HomePage() {
           </section>
           <section className={styles.section} id="services">
             <Services />
+          </section>
+          <section className={styles.section} id="plans">
+            <Plans />
           </section>
         </Flex>
       </main>

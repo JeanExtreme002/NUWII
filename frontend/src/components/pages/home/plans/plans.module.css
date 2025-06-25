@@ -1,0 +1,100 @@
+@keyframes lighting {
+  0% {
+    transform: translateX(0);
+    text-shadow: none;
+  }
+  50% {
+    transform: translateX(3px);
+    text-shadow: -3px 0 5px #0ff;
+  }
+  100% {
+    transform: translateX(0);
+    text-shadow: none;
+  }
+}
+
+@keyframes lightingLine {
+  0% {
+    left: -100%;
+    opacity: 0;
+  }
+
+  45% {
+    opacity: 1;
+  }
+
+  50% {
+    left: 0%;
+    opacity: 1;
+  }
+
+  55% {
+    opacity: 1;
+  }
+
+  100% {
+    left: 100%;
+    opacity: 0;
+  }
+}
+
+.lightingText {
+  position: relative;
+  display: inline-block; /* necessário para a linha acompanhar o texto */
+}
+
+.lightingText::after {
+  content: '';
+  position: absolute;
+  bottom: 0;
+  left: -100%;
+  width: 50%;
+  height: 2px;
+  background-color: #44cbc6;
+  animation: lightingLine 1.5s ease-in-out infinite;
+  animation-delay: -0.2s;
+  pointer-events: none;
+}
+
+.root {
+  position: relative;
+  display: flex;
+  flex-grow: 1;
+  width: 100%;
+  background-color:#1c1c1e;
+  align-items: center;
+  justify-content: center;
+}
+
+.container {
+  display: flex;
+  flex-grow: 1;
+  max-width: 1300px;
+  padding: 50px;
+  flex-direction: column;
+}
+
+.headerTitle {
+  text-align: center;
+  font-family: 'LinearGrotesk-Black', sans-serif;
+  font-size: 40px;
+  color: #fff;
+}
+
+@media (max-width: 1250px) {
+}
+
+@media (max-width: 1010px) {
+  .headerTitle {
+    font-size: 30px;
+  }
+}
+
+@media (max-width: 650px) {
+  .headerTitle {
+    font-size: 25px;
+  }
+}
+
+@media (max-width: 490px) {
+}

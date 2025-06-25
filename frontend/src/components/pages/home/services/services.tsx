@@ -34,6 +34,35 @@ const cards = [
   },
 ];
 
+const advantages = [
+  'Abertura de empresa grátis;',
+  'Desenquadramento grátis;',
+  'Planejamento tributário grátis;',
+  'Programa de cashback',
+  'Sem cobrança de 13º salário;',
+  'Atendimento 100% digital, sem sair de casa;',
+  'Atendimento para todo o Brasil.'
+];
+
+function highlightText(text: string, substrings: string[]) {
+  if (!substrings || substrings.length === 0) return text;
+
+  const pattern = substrings
+    .map(str => str.replace(/[.*+?^${}()|[\]\\]/g, '\\$&'))
+    .join('|');
+  const regex = new RegExp(`(${pattern})`, 'gi');
+
+  return text.split(regex).map((part, i) =>
+    substrings.some(sub =>
+      part.toLowerCase() === sub.toLowerCase()
+    ) ? (
+      <strong key={i} style={{color: BusinessColors.Blue}}>{part}</strong>
+    ) : (
+      part
+    )
+  );
+}
+
 interface BusinessServiceCardProps {
   title1: string
   description1: ReactNode
@@ -134,15 +163,6 @@ const BusinessServiceCard = (props: BusinessServiceCardProps) => {
   );
 };
 
-const advantages = [
-  'Abertura de empresa grátis;',
-  'Desenquadramento grátis;',
-  'Planejamento tributário grátis;',
-  'Sem cobrança de 13º salário;',
-  'Atendimento 100% digital, sem sair de casa;',
-  'Atendimento para todo o Brasil.'
-];
-
 export default function AdvantageCardList() {
   return (
     <Box className={styles.advantagens} display="flex" flexDirection="column" gap={2} p={2}>
@@ -159,7 +179,13 @@ export default function AdvantageCardList() {
         >
           <CardContent>
             <div className={styles.advantageText}>
-              {text.toUpperCase()}
+              {highlightText(text.toUpperCase(), [
+                "CASHBACK", 
+                "GRÁTIS",
+                "SEM SAIR DE CASA",
+                "TODO O BRASIL",
+                "13º SALÁRIO"
+              ])}
             </div>
           </CardContent>
         </Card>
@@ -167,26 +193,6 @@ export default function AdvantageCardList() {
     </Box>
   );
 }
-
-function highlightText(text: string, substrings: string[]) {
-  if (!substrings || substrings.length === 0) return text;
-
-  const pattern = substrings
-    .map(str => str.replace(/[.*+?^${}()|[\]\\]/g, '\\$&'))
-    .join('|');
-  const regex = new RegExp(`(${pattern})`, 'gi');
-
-  return text.split(regex).map((part, i) =>
-    substrings.some(sub =>
-      part.toLowerCase() === sub.toLowerCase()
-    ) ? (
-      <strong key={i} style={{color: BusinessColors.Blue}}>{part}</strong>
-    ) : (
-      part
-    )
-  );
-}
-
 
 export function Services() {
   return (
