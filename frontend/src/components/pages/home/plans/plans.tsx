@@ -1,6 +1,8 @@
 import { Flex } from "@radix-ui/themes";
-import styles from "./plans.module.css";
+
 import { BusinessColors } from "@/lib";
+
+import styles from "./plans.module.css";
 
 export function Plans() {
 
