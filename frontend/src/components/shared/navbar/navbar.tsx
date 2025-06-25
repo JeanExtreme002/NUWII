@@ -31,7 +31,7 @@ function SideBar({ isOpen, setIsOpen }: SideBarProps) {
     { label: 'A NUWII', href: '#about' },
     { label: 'SERVIÇOS', href: '#services' },
     { label: 'PLANOS', href: '#plans' },
-    { label: 'CONTATO', href: '/' },
+    { label: 'CONTATO', href: '#contact' },
   ];
 
   return (
@@ -116,7 +116,7 @@ export function NavBar() {
           <TabNav.Link className={styles.tabNavLink} href="#about">A NUWII</TabNav.Link>
           <TabNav.Link className={styles.tabNavLink} href="#services">SERVIÇOS</TabNav.Link>
           <TabNav.Link className={styles.tabNavLink} href="#plans">PLANOS</TabNav.Link>
-          <TabNav.Link className={styles.tabNavLink} href="/">CONTATO</TabNav.Link>
+          <TabNav.Link className={styles.tabNavLink} href="#contact">CONTATO</TabNav.Link>
           <TabNav.Link>{getLoginButton()}</TabNav.Link>
         </TabNav.Root>
       </div>
