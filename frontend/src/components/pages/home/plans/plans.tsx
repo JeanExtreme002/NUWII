@@ -7,12 +7,49 @@ import { green } from '@mui/material/colors';
 import { Flex } from "@radix-ui/themes";
 import Image, { StaticImageData } from 'next/image';
 import React from 'react';
+import ExpandMoreIcon from '@mui/icons-material/ExpandMore';
+import { Accordion, AccordionSummary, AccordionDetails } from '@mui/material';
 
 import { BusinessColors, config } from "@/lib";
 
 import person1Image from "./assets/juliana.png"
 import person2Image from "./assets/nadja.png"
 import styles from "./plans.module.css";
+
+const faqData = [
+  {
+    question: "O que é uma contabilidade digital?",
+    answer: "A contabilidade digital é um modelo moderno de prestação de serviços contábeis que utiliza tecnologia para automatizar processos, facilitar o acesso às informações e proporcionar maior agilidade no atendimento. Na NUWII, você tem acesso a um portal web e aplicativo para acompanhar sua empresa em tempo real."
+  },
+  {
+    question: "Como funciona a abertura de empresa na NUWII?",
+    answer: "O processo é 100% digital e gratuito para clientes dos planos anuais. Nossa equipe cuida de toda a documentação e burocracia necessária. Você apenas fornece as informações básicas e nós cuidamos do resto, desde a consulta de viabilidade até a emissão do CNPJ."
+  },
+  {
+    question: "Quanto custa abrir uma empresa?",
+    answer: "Para clientes que contratam nossos planos anuais, a abertura é totalmente gratuita. Isso inclui todas as taxas de registro, documentação e honorários. Você economiza entre 10% a 20% escolhendo o plano anual e ainda ganha a abertura sem custo adicional."
+  },
+  {
+    question: "O que é e qual a obrigatoriedade do Certificado Digital?",
+    answer: "O Certificado Digital é uma assinatura eletrônica que garante autenticidade e segurança nas transações digitais com o governo. É obrigatório para empresas do Lucro Presumido e Lucro Real, e opcional para MEI e Simples Nacional. Todos os nossos planos incluem Certificado Digital A1."
+  },
+  {
+    question: "E quando já possuo empresa, mas quero que a NUWII cuide da minha?",
+    answer: "Fazemos a migração da sua empresa de forma gratuita! Nossa equipe especializada cuida de todo o processo de transição, incluindo a organização da documentação contábil anterior e regularização de pendências, se houver. O processo é simples e rápido."
+  },
+  {
+    question: "Quanto tempo demora para trocar de contador?",
+    answer: "O processo de migração geralmente leva de 15 a 30 dias. Durante esse período, nossa equipe faz toda a análise da situação atual da empresa, organiza a documentação e realiza a transição de forma segura, garantindo que não haja interrupção nos serviços."
+  },
+  {
+    question: "A NUWII tem planos para todos os tamanhos?",
+    answer: "Sim! Oferecemos planos desde MEI até empresas de grande porte. Temos o NU MEI, NU Standard, NU Commerce, NU Advanced, Carnê Leão para autônomos e planos personalizados para empresas com faturamento acima de R$ 4,8 milhões anuais."
+  },
+  {
+    question: "Quanto tempo dura meu contrato com a NUWII?",
+    answer: "Oferecemos contratos anuais com desconto (economia de 10% a 20%) e mensais. Não há fidelidade obrigatória - você pode cancelar quando desejar. Recomendamos o plano anual pelos benefícios adicionais, como abertura gratuita da empresa."
+  }
+];
 
 // Lista de planos
 const plans = [
@@ -328,11 +365,84 @@ export function Plans() {
             <CardPlan key={index} title={plan.title} items={plan.features} info={plan.info} />
           ))}
         </Flex>
-        <Flex style={{marginTop: "50px", width: "100%", alignItems: "center", justifyContent: "center"}}>
+        <Flex style={{marginTop: "70px", width: "100%", alignItems: "center", justifyContent: "center"}}>
           <div style={{width: "60%"}}>
             <GradientBar/>
           </div>
         </Flex>
+        {/* FAQ Section */}
+        <Box sx={{ mt: 8, width: '100%', maxWidth: '800px', mx: 'auto' }}>
+          <Typography 
+            variant="h3" 
+            component="h2"
+            sx={{
+              textAlign: 'center',
+              fontWeight: 700,
+              color: '#fff',
+              mb: 4,
+              fontSize: { xs: '2rem', md: '2.5rem' }
+            }}
+          >
+            <span className={styles.lightingText} style={{paddingBottom: "7px"}}>
+              Perguntas <span style={{color: BusinessColors.Blue}}>Frequentes</span>
+            </span>
+          </Typography>
+          
+          <Box sx={{ display: 'flex', flexDirection: 'column', gap: 2 }}>
+            {faqData.map((faq, index) => (
+              <Accordion
+                key={index}
+                elevation={2}
+                sx={{
+                  border: '1px solid #e0e0e0',
+                  borderRadius: '8px !important',
+                  '&:before': { display: 'none' },
+                  '&.Mui-expanded': {
+                    margin: 0,
+                    boxShadow: `0 4px 12px ${BusinessColors.Blue}20`,
+                    border: `1px solid ${BusinessColors.Blue}40`,
+                  }
+                }}
+              >
+                <AccordionSummary
+                  expandIcon={<ExpandMoreIcon sx={{ color: BusinessColors.Blue }} />}
+                  sx={{
+                    backgroundColor: '#fafafa',
+                    borderRadius: '8px',
+                    '&.Mui-expanded': {
+                      backgroundColor: `${BusinessColors.Blue}05`,
+                    },
+                    '& .MuiAccordionSummary-content': {
+                      margin: '16px 0',
+                    }
+                  }}
+                >
+                  <Typography 
+                    variant="h6" 
+                    sx={{ 
+                      fontWeight: 600,
+                      color: '#263238',
+                      fontSize: { xs: '1rem', md: '1.1rem' }
+                    }}
+                  >
+                    {faq.question}
+                  </Typography>
+                </AccordionSummary>
+                <AccordionDetails sx={{ pt: 0, pb: 3 }}>
+                  <Typography 
+                    sx={{ 
+                      color: '#455A64',
+                      lineHeight: 1.7,
+                      fontSize: '1rem'
+                    }}
+                  >
+                    {faq.answer}
+                  </Typography>
+                </AccordionDetails>
+              </Accordion>
+            ))}
+          </Box>
+        </Box>
         {/* <Flex className={styles.recommendationComponent}>
           <RecommendationCard
             photo={person1Image}
