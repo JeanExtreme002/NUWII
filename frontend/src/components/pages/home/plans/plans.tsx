@@ -419,8 +419,7 @@ export function Plans() {
                 >
                   <Typography 
                     variant="h6" 
-                    sx={{ 
-                      fontWeight: 600,
+                    sx={{
                       color: '#263238',
                       fontSize: { xs: '1rem', md: '1.1rem' }
                     }}
