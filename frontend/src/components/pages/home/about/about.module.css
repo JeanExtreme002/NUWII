@@ -57,7 +57,14 @@
 }
 
 .headerTitleDetails {
-  width: 55%;
+  width: 90%;
+  text-align: center;
+  font-family: LinearGrotesk-Light, sans-serif;
+  margin-bottom: 2vh;
+}
+
+.headerTitleDetails2 {
+  width: 100%;
   text-align: center;
   font-family: LinearGrotesk-Light, sans-serif;
   margin-bottom: 2vh;
@@ -71,6 +78,13 @@
 .notesImage {
   width: calc(1024px * 0.25);
   height: calc(1536px * 0.25);
+}
+
+.circleItem {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  margin-block: 15px;
 }
 
 .storyContainer {
@@ -101,7 +115,7 @@
 
 .storyLargeText {
   color: #fff;
-  margin-left: min(3vw, 50px);
+  margin-left: min(3vw, 40px);
   text-align: left;
   font-family: LinearGrotesk-Bold, sans-serif;
   font-size: 25px;

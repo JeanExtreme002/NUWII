@@ -1,4 +1,4 @@
-import {Addchart as AddchartIcon} from '@mui/icons-material';
+import {Addchart as AddchartIcon, CheckCircleOutline as CheckCircleOutlineIcon} from '@mui/icons-material';
 import { Button } from "@mui/material";
 import { Flex, Heading } from "@radix-ui/themes";
 
@@ -24,7 +24,10 @@ export function About() {
           </Heading>
           <Flex className={styles.storyContainer} direction={"column"}>
             <div className={styles.headerTitleDetails}>
-              A NUWI<span style={{color: BusinessColors.Blue}}>I</span> é uma empresa contábil digital, especialista em soluções para empresários que querem simplificar rotinas, economizar impostos e aumentar seu faturamento.
+              A NUWI<span style={{color: BusinessColors.Blue}}>I</span> é para quem quer ir além da contabilidade tradicional.
+            </div>
+            <div className={styles.headerTitleDetails2}>
+              Somos uma <span style={{color: BusinessColors.Blue}}>contabilidade digital inteligente</span>, feita para empresários que buscam simplicidade, economia e crescimento real.
             </div>
             <Flex className={styles.storyContent}>
               <Flex>
@@ -32,9 +35,20 @@ export function About() {
               </Flex>
               <Flex style={{justifyContent: "space-between"}}>
                 <div className={styles.storyText}>
-                  Diferente da contabilidade online, onde o cliente  faz tudo sozinho, nós oferecemos um <span style={{color: BusinessColors.Blue}}>serviço digital completo</span>, rápido, simplificado e 100% virtual. Com nossa abordagem digital, <span style={{color: BusinessColors.Blue}}>você ganha liberdade</span> para focar no que realmente importa: fazer seu negócio florescer.<br/><br/>
-                  <div className={styles.metricsText}>
-                    + de 150 CNPJ <span style={{color: BusinessColors.Blue}}>constituído.</span>
+                  Você conta com um <span style={{color: BusinessColors.Blue}}>serviço digital completo</span>, que uma tecnologia de ponta, com um atendimento humano e descomplicado. <br/><br/>Enquanto você foca no que ama, nós cuidamos da burocracia e do seu crescimento.
+                  <div>
+                    <div className={styles.circleItem}>
+                      <CheckCircleOutlineIcon style={{color: BusinessColors.Blue}}/> Mais de 150 empresas já começaram com a gente.
+                    </div>
+                    <div className={styles.circleItem}>
+                      <CheckCircleOutlineIcon style={{color: BusinessColors.Blue}}/> +10 estados atendidos com excelência.
+                    </div>
+                    <div className={styles.circleItem}>
+                      <CheckCircleOutlineIcon style={{color: BusinessColors.Blue}}/> +5 anos ajudando negócios a prosperar.
+                    </div>
+                  </div>
+                  <div style={{paddingBottom: "10px"}}>
+                    Simplifique. Economize. <span style={{color: BusinessColors.Blue}}>Cresça com a NUWII.</span>
                   </div>
                   <Button
                     className={styles.servicesButton}
@@ -49,12 +63,9 @@ export function About() {
                     }}
                   >
                     <span className={styles.servicesButton}>
-                      Conhecer serviços
+                      Começar agora
                     </span>
                   </Button>
-                </div>
-                <div style={{flex: 1}}>
-                  <Image className={styles.notesImage} src={notesImage} alt="Notes" />
                 </div>
               </Flex>
             </Flex>
@@ -76,7 +87,7 @@ export function About() {
             <Flex className={styles.storyContent}>
               <Flex className={styles.heroContainer}>
                 <div className={styles.storyLargeText}>
-                  Em um mercado cada vez mais competitivo, a <span style={{color: BusinessColors.Blue}}>contabilidade</span> vai além de uma obrigação legal. <br/><br/><span style={{fontSize: "20px"}}>É o <span style={{color: BusinessColors.Blue}}>alicerce</span> estratégico para otimizar a saúde financeira, garantir conformidade fiscal e promover o <span style={{color: BusinessColors.Blue}}>crescimento</span> sustentável do seu negócio.</span>
+                  Entendemos que <span style={{color: BusinessColors.Blue}}>a contabilidade não deve ser um obstáculo nesse processo</span>, <span style={{fontSize: "22px"}}>mas sim a base que sustenta a sua evolução.</span><br/><br/> <span style={{fontSize: "20px"}}>Cuidamos dos números, da burocracia e da estratégia, para que você tenha liberdade de crescer o seu negócio, <span style={{color: BusinessColors.Blue, fontSize: "23px", wordSpacing: "4px"}}>com a leveza e segurança que precisa</span>.</span>
                 </div>
                 <div style={{flex: 1}}>
                   <Image className={styles.heroImage} src={heroImage} alt="Hero" />

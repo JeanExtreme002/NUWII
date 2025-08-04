@@ -166,6 +166,16 @@
   height: calc(480px * 0.30);
 }
 
+.desktopButton {
+  display: flex;
+  justify-content: center;
+  margin-block: 30px;
+}
+
+.mobileButton {
+  display: none;
+}
+
 @media (min-width: 1400px) {
   .root::after {
     height: 60px;
@@ -183,6 +193,12 @@
   }
   .benefitsContainer {
     margin-top: min(7vh, 100px);
+  }
+  .desktopButton {
+    display: none;
+  }
+  .mobileButton {
+    display: block;
   }
 }
 
@@ -243,9 +259,12 @@
   .mobileMotivationText {
     font-size: 25px;
   }
+  .mobileButtonText {
+    font-size: 11px;
+  }
 }
 
-@media (max-width: 490px) {
+@media (max-width: 500px) {
   .heroImage {
     width: calc(2387px * 0.15);
     height: calc(1545px * 0.15);
@@ -254,5 +273,8 @@
     width: calc(1872px * 0.2);
     height: calc(480px * 0.2);
     margin-bottom: 2vh;
+  }
+  .mobileButtonText {
+    font-size: 13px;
   }
 }

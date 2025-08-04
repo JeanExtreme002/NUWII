@@ -15,32 +15,31 @@ const cards = [
   {
     titulo: "ASSESSORIA HUMANIZADA",
     descricao:
-      "Para empresários e pessoas físicas que buscam regularização e pagamento mínimo de impostos",
+      "Soluções personalizadas para regularizar com tranquilidade e pagar apenas o necessário.",
   },
   {
-    titulo: "ABERTURA DE EMPRESA",
+    titulo: "CONSULTORIA",
     descricao:
-      "Você conta com uma especialista para abrir o seu CNPJ de forma rápida, sem sair de casa e sem cobrança de honorários de abertura",
+      "Para quem tem dúvidas sobre a contabilidade da empresa ou quer ajuda para tomar a melhor decisão antes de começar.",
   },
   {
-    titulo: "A SUA TROCA DE CONTADOR",
+    titulo: "TROCA DE CONTADOR",
     descricao:
-      "Transfira sua contabilidade para nosso escritório digital a qualquer momento do ano",
+      "Transfira sua contabilidade para nosso escritório digital de forma simples, sem burocracia e sem complicação em qualquer época do ano.",
   },
   {
-    titulo: "CONTABILIDADE COMPLETA",
+    titulo: "ENDEREÇO FISCAL",
     descricao:
-      "Além da contabilidade completa, fornecemos soluções com nossos parceiros para tornar seu dia a dia mais tranquilo",
-  },
+      "Separar o pessoal do comercial nunca foi tão fácil. Tenha um endereço empresarial sem os custos de um espaço físico.",
+  }
 ];
 
 const advantages = [
   'Abertura de empresa grátis;',
   'Desenquadramento grátis;',
-  'Planejamento tributário grátis;',
-  'Programa de cashback',
-  'Sem cobrança de 13º salário;',
+  'Programa de cashback;',
   'Atendimento 100% digital, sem sair de casa;',
+  'Rede de networking;',
   'Atendimento para todo o Brasil.'
 ];
 
@@ -171,10 +170,15 @@ export default function AdvantageCardList() {
           key={index}
           className={styles.advantageTextContainer}
           sx={{
-            borderRadius: 50,
+            borderRadius: 3,
+            cursor: 'pointer',
             border: '1px solid black',
             boxShadow: 6,
-            backgroundColor: '#f9f9f9'
+            backgroundColor: '#f9f9f9',
+            transition: 'transform 0.3s ease-in-out',
+            '&:hover': {
+              transform: 'scale(1.1)',
+            },
           }}
         >
           <CardContent>
@@ -183,8 +187,8 @@ export default function AdvantageCardList() {
                 "CASHBACK", 
                 "GRÁTIS",
                 "SEM SAIR DE CASA",
+                "NETWORKING",
                 "TODO O BRASIL",
-                "13º SALÁRIO"
               ])}
             </div>
           </CardContent>
@@ -263,9 +267,10 @@ export function Services() {
               >
                 <Typography variant="body2">
                   {highlightText(card.descricao, [
-                    "especialista", 
-                    "sem sair de casa",
-                    "empresários e pessoas físicas"
+                    "e pagar apenas o necessário", 
+                    "tomar a melhor decisão",
+                    "escritório digital",
+                    "endereço empresarial",
                   ])}
                 </Typography>
               </Box>
@@ -274,7 +279,13 @@ export function Services() {
         </Flex>
         <Flex direction={"column"}>
           <div className={styles.advantageHeaderTitle}>
-            Vantagens <AddTaskIcon sx={{ fontSize: 22 }}/>
+            Vantagens de trabalhar com a <span style={{color: BusinessColors.Blue}}>NUWII</span> <AddTaskIcon sx={{ fontSize: 22 }}/>
+          </div>
+          <div className={styles.mobileAdvantageHeaderTitle}>
+            Oferecemos <span style={{color: BusinessColors.Blue}}>V</span>antagens <AddTaskIcon sx={{ fontSize: 22 }}/>
+          </div>
+          <div style={{marginTop: "10px", marginBottom: "10px"}}>
+            Contabilidade completa e uma rede de parceiros para tornar sua gestão mais leve e eficiente.
           </div>
           <Flex className={styles.advantageContainer}>
             <AdvantageCardList/>
@@ -283,7 +294,7 @@ export function Services() {
               <Flex style={{alignItems: "center"}}>
                 <Button
                   className={styles.servicesButton}
-                  variant="contained"
+                  variant="outlined"
                   href="#plans"
                   endIcon={<AppRegistrationIcon/>}
                   sx={{
@@ -292,7 +303,6 @@ export function Services() {
                     marginLeft: "50px",
                     color: "#111",
                     borderRadius: "50px",
-                    backgroundColor: BusinessColors.LightBlue,
                   }}
                 >
                   <span className={styles.plansButton}>

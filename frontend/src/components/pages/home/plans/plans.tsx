@@ -17,40 +17,81 @@ import styles from "./plans.module.css";
 // Lista de planos
 const plans = [
   {
-    title: "NUWII Standard*",
+    title: "NU Standard*",
     features: [
       'Contabilidade completa',
-      'Abertura de Empresa grátis',
-      'Suporte e consultoria para emissão de notas fiscais',
-      'Atendimento via e-mail e WhatsApp das 9h às 17h',
-      'E-CNPJ A1*',
-      'Pró-labore do sócio (01)',
+      'Simples Nacional, Lucro Presumido ou Lucro Real',
+      'Pró-labore dos sócios',
+      'Abertura ou migração ou desenquadramento grátis',
+      'Apuração de impostos e calendário',
+      'Certificado digital A1',
+      'Aplicativo e portal do cliente web',
     ],
-    info: "Para Empresas de Serviços com faturamento no Simples Nacional de até R$25mil/mês"
+    info: "Plano ideal para Empresas de Serviços com faturamento até R$4.800mi/ano."
   },
   {
-    title: "NUWII Unique*",
+    title: "NU Commerce*",
     features: [
-      'Tudo do plano Standard',
-      'Folha de pagamento - funcionário (01)',
-      'Emissão de até 15 notas fiscais',
-      'Controle de Certidões e Alvarás',
-      'E-CPF A1*',
-      'Planejamento tributário da empresa'
+      'Contabilidade completa',
+      'Simples Nacional, Lucro Presumido ou Lucro Real',
+      'Pró-labore dos sócios',
+      'Abertura ou migração ou desenquadramento grátis',
+      'Apuração de impostos e calendário',
+      'Certificado digital A1',
+      'Aplicativo e portal do cliente web',
     ],
-    info: "Para Empresas de Serviços com faturamento no Simples Nacional de até R$60mil/mês"
+    info: "Plano ideal para Empresas de Comércio com faturamento até R$4.800mi/ano."
   },
   {
-    title: "NUWII Advanced*",
+    title: "NU Advanced*",
     features: [
-      'Tudo do plano Unique',
-      'Folha de pagamento - funcionário (03)',
-      'Emissão de até 30 notas fiscais',
-      'Consultoria via meet (Tributário e Trabalhista)',
-      'Declaração do IRPF dos sócios',
-      'Consultoria Estratégica, Financeira e Tributária com o especialista'
+      'Contabilidade completa',
+      'Simples Nacional, Lucro Presumido ou Lucro Real',
+      'Pró-labore dos sócios',
+      'Abertura ou migração ou desenquadramento grátis',
+      'Apuração de impostos e calendário',
+      'Certificado digital A1',
+      'Aplicativo e portal do cliente web',
     ],
-    info: "Para Empresas de Serviços com faturamento no Simples Nacional superior a R$60mil/mês"
+    info: "Plano para Empresas de Atividade Mista (Serviço + Comércio ou Serviço + Indústria), com faturamento até R$4.800mi/ano."
+  },
+  {
+    title: "NU MEI*",
+    features: [
+      'Serviço, Comércio ou Atividade Mista',
+      'Contabilidade completa',
+      'Pró-labore do empresário',
+      'Abertura ou migração grátis',
+      'Desenquadramento e transformação jurídica grátis',
+      'Apuração de impostos e calendário',
+      'Aplicativo e portal do cliente web',
+    ],
+    info: "Plano ideal para Microempreendedor Individual com faturamento até R$81 mil/ano."
+  },
+  {
+    title: "CARNÊ LEÃO",
+    features: [
+      'INSS do profissional',
+      'Contabilidade completa',
+      'Abertura ou migração grátis',
+      'Baixa do MEI grátis (pra quem está com atividade irregular no MEI e quer mudar pra modelo autônomo)',
+      'Apuração de impostos e calendário',
+      'Aplicativo e portal do cliente web',
+    ],
+    info: "Plano ideal para Autônomo PF com rendimentos até R$81 mil/ano."
+  },
+  {
+    title: "PERSONALIZADO",
+    features: [
+      'Lucro Presumido ou Lucro Real',
+      'Analista dedicado por departamento',
+      'Contabilidade completa',
+      'Abertura ou migração grátis',
+      'Planejamento tributário grátis',
+      'Apuração de impostos e calendário',
+      'Aplicativo e portal do cliente web',
+    ],
+    info: "Para empresas com faturamento acima do limite dos planos. Suporte personalizado."
   }
 ];
 
@@ -67,6 +108,25 @@ function highlightText(text: string, substrings: string[]) {
       part.toLowerCase() === sub.toLowerCase()
     ) ? (
       <strong key={i} style={{color: BusinessColors.Blue}}>{part}</strong>
+    ) : (
+      part
+    )
+  );
+}
+
+function highlightTextBold(text: string, substrings: string[]) {
+  if (!substrings || substrings.length === 0) return text;
+
+  const pattern = substrings
+    .map(str => str.replace(/[.*+?^${}()|[\]\\]/g, '\\$&'))
+    .join('|');
+  const regex = new RegExp(`(${pattern})`, 'gi');
+
+  return text.split(regex).map((part, i) =>
+    substrings.some(sub =>
+      part.toLowerCase() === sub.toLowerCase()
+    ) ? (
+      <strong key={i} style={{fontWeight: "bold"}}>{part}</strong>
     ) : (
       part
     )
@@ -120,37 +180,27 @@ const CardPlan: React.FC<CardPlanProps> = ({ title, items, info }) => {
             color={BusinessColors.Blue} 
             fontWeight="bold"     
           >
-            {title.split(' ')[0]}
+            {title !== "CARNÊ LEÃO" ? title.split(' ')[0] : <span>CARNÊ <span style={{color: "#000"}}>LEÃO</span></span>}
           </Typography>
           <Typography variant="h5" align="center" fontWeight="bold" gutterBottom>
-            {title.split(' ').slice(1).join(' ')}
+            {title !== "CARNÊ LEÃO" ? title.split(' ').slice(1).join(' ') : <></>}
           </Typography>
+          <div className={styles.infoText}>
+            <InfoOutlineIcon sx={{fontSize: "13px", marginLeft: "5px"}}/>
+            <span style={{marginLeft: "5px"}}>
+              {highlightTextBold(info, ["Empresas de Serviços", "Empresas de Comércio", "Empresas de Atividade Mista", "Microempreendedor Individual", "Autônomo PF", "Suporte personalizado."])}
+            </span>
+          </div>
           <List>
             {items.map((item, index) => (
               <ListItem key={index} disableGutters>
                 <ListItemIcon sx={{ minWidth: 32 }}>
                   <CheckCircleIcon sx={{ color: green[500] }} />
                 </ListItemIcon>
-                <ListItemText primary={highlightText(item, [
-                  "9h às 17h",
-                  "01",
-                  "03",
-                  "Alvarás",
-                  "Standard",
-                  "Unique",
-                  "15 notas",
-                  "30 notas",
-                  "meet",
-                ])} />
+                <ListItemText primary={item} />
               </ListItem>
             ))}
           </List>
-          <div className={styles.infoText}>
-            <InfoOutlineIcon sx={{fontSize: "12px", marginLeft: "5px"}}/>
-            <span style={{marginLeft: "5px"}}>
-              {info}
-            </span>
-          </div>
         </CardContent>
 
         {/* WhatsApp Button */}
@@ -283,7 +333,7 @@ export function Plans() {
             <GradientBar/>
           </div>
         </Flex>
-        <Flex className={styles.recommendationComponent}>
+        {/* <Flex className={styles.recommendationComponent}>
           <RecommendationCard
             photo={person1Image}
             name="Ju.fraccaroli"
@@ -296,7 +346,7 @@ export function Plans() {
             title="Contabilidade Organizada e Humanizada"
             text={`Meu nome é Nadja, sou cliente da NUWII A há 2 anos e foi o Gabriel junto com sua equipe que organizou tooooda a contabilidade da minha empresa. Começamos na modalidade MEI e hoje já somos uma ME, com tudo perfeitamente organizado. Se pudesse recomendar algo a qualquer empresário seria, sem dúvidas, um suporte de contabilidade como eu tenho. Nunca, nesses 2 anos, precisei resolver nenhuma burocracia com relação a impostos ou taxas. O pessoal da NUWII organiza todos os processos e me deixa super tranquila com relação a essa parte tão chata que é a contabilidade de qualquer empresa. Obrigada, de coração, pelo excelente serviço prestado.`}
           />
-        </Flex>
+        </Flex> */}
       </Flex>
     </Flex>
   );

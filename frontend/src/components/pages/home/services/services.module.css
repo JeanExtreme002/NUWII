@@ -140,9 +140,15 @@
   margin-top: 40px;
 }
 
+.mobileAdvantageHeaderTitle {
+  display: none;
+  font-family: 'LinearGrotesk-Black', sans-serif;
+  font-size: 40px;
+  margin-top: 40px;
+}
+
 .advantageContainer {
   display: flex;
-  align-items: center;
   justify-content: center;
   width: 100%;
 }
@@ -153,6 +159,7 @@
 
 .advantageTextContainer {
   max-width: 500px;
+  max-height: 60px;
 }
 
 .advantageText {
@@ -181,6 +188,13 @@
   }
   .serviceCardTitle {
     font-size: 14px;
+  }
+  .advantageText {
+    font-size: 14px;
+  }
+  .advantageTextContainer {
+    font-size: 10px;
+    max-height: 80px;
   }
 }
 
@@ -220,6 +234,15 @@
   }
   .plansButton {
     font-size: 15px;
+  }
+  .mobileAdvantageHeaderTitle {
+    display: block;
+  }
+  .advantageHeaderTitle {
+    display: none;
+  }
+  .advantageContainer {
+    align-items: center;
   }
 }
 

@@ -28,24 +28,36 @@ const AnimatedShadowButton = styled(Button)({
   },
 });
 
-function highlightText(text: string, substring: string) {
-  return text.split(new RegExp(`(${substring})`, 'gi')).map((part, i) =>
-    part.toLowerCase() === substring.toLowerCase() ? <span key={i} style={{color: BusinessColors.Blue, fontSize: "22px"}}>{part}</span> : part
+function highlightText(text: string, substrings: string[]) {
+  if (!substrings || substrings.length === 0) return text;
+
+  const pattern = substrings
+    .map(str => str.replace(/[.*+?^${}()|[\]\\]/g, '\\$&'))
+    .join('|');
+  const regex = new RegExp(`(${pattern})`, 'gi');
+
+  return text.split(regex).map((part, i) =>
+    substrings.some(sub =>
+      part.toLowerCase() === sub.toLowerCase()
+    ) ? (
+      <strong key={i} style={{color: BusinessColors.Blue}}>{part}</strong>
+    ) : (
+      part
+    )
   );
 }
 
 export function Hero() {
 
-  const description1 = `Acreditamos que cada empresa carrega uma história única. E é com responsabilidade, conhecimento e tecnologia que ajudamos você a escrever os próximos capítulos — fazer o seu negócio florescer.`
-  const description2 = `Oferecemos uma contabilidade moderna, próxima e descomplicada, com menos burocracia para focar no que realmente importa.`
-
-  const description2Element = highlightText(description2, "contabilidade moderna");  
+  const description1 = `Nós transformamos números em crescimento com propósito...`
+  const description2 = `Acreditamos que cada empresa carrega uma história única. E é com responsabilidade, conhecimento e tecnologia que ajudamos você a escrever os próximos capítulos.`;
+  const description3 = `Oferecemos soluções empresariais alinhadas aos seus propósitos, com menos burocracia e mais eficiência, para que possa focar no que realmente importa: O crescimento da sua empresa.`;
 
   const getMotivationText = () => {
     return (
       <span className={ styles.lightingText }>
         <span className={ styles.glowingText }>
-          Todos querem <span style={{color: BusinessColors.Blue}}>chegar</span> no topo...
+          Todos querem <span style={{color: BusinessColors.Blue}}>chegar</span> ao topo...
         </span>
       </span>
     )
@@ -59,22 +71,21 @@ export function Hero() {
         </div>
         <Flex className={ styles.rowContainer }>
           <div className={ styles.leftComponent }>
-            <div style={{color: BusinessColors.Blue}}>
-              Transformamos números em crescimento com propósito!!
-            </div>
             <div className={styles.description}>
-              <div>{description1}</div>
-              <div>{description2Element}</div>
+              <div>{highlightText(description1, ["crescimento"])}</div>
+              <div>{highlightText(description2, ["história única", "responsabilidade, conhecimento e tecnologia"])}</div>
+              <div>{highlightText(description3, ["soluções empresariais alinhadas aos seus propósitos", "O crescimento da sua empresa"])}</div>
             </div>
             <div className={styles.benefitsContainer}>
-              <AnimatedShadowButton
-                endIcon={<SendIcon />}
-                variant="outlined" 
-                target="_blank"
-                href={`https://wa.me/${config.phoneNumber}?text=Olá! Venho pelo site da NUWII, e possuo interesse em saber mais sobre os serviços :)`}
-              >
-                Começar agora
-              </AnimatedShadowButton>
+              <div className={ styles.mobileButton }>
+                <AnimatedShadowButton
+                  variant="outlined" 
+                  target="_blank"
+                  href={`https://wa.me/${config.phoneNumber}?text=Olá! Venho pelo site da NUWII, e possuo interesse em saber mais sobre os serviços :)`}
+                >
+                  <span className={ styles.mobileButtonText }>QUERO DESCOMPLICAR MINHA CONTABILIDADE</span>
+                </AnimatedShadowButton>
+              </div>
               <Image className={styles.benefitsImage} src={benefitsImg} alt="Benefits"/>
             </div>
           </div>
@@ -83,6 +94,15 @@ export function Hero() {
               {getMotivationText()}
             </div>
             <Image className={styles.heroImage} src={heroImg} alt="Hero"/>
+            <div className={ styles.desktopButton }>
+              <AnimatedShadowButton
+                variant="outlined" 
+                target="_blank"
+                href={`https://wa.me/${config.phoneNumber}?text=Olá! Venho pelo site da NUWII, e possuo interesse em saber mais sobre os serviços :)`}
+              >
+                QUERO DESCOMPLICAR MINHA CONTABILIDADE
+              </AnimatedShadowButton>
+            </div>
           </div>
         </Flex>
       </Flex>
