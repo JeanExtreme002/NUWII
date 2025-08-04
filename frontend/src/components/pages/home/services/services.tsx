@@ -301,6 +301,7 @@ export function Services() {
                     maxHeight: "50px",
                     marginRight: "30px",
                     marginLeft: "50px",
+                    marginBottom: "80px",
                     color: "#111",
                     borderRadius: "50px",
                   }}
