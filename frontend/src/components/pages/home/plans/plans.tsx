@@ -1,19 +1,17 @@
 import { CenterFocusStrong as CenterFocusStrongIcon, InfoOutline as InfoOutlineIcon } from '@mui/icons-material';
 import CheckCircleIcon from '@mui/icons-material/CheckCircle';
-import { Box, Button,Card, CardContent, List, ListItem, ListItemIcon, ListItemText,   Paper,
-Typography ,
-} from '@mui/material';
+import ExpandMoreIcon from '@mui/icons-material/ExpandMore';
+import {  Accordion, AccordionDetails,AccordionSummary,Box, Button,Card, CardContent, List, ListItem, ListItemIcon, ListItemText,
+Typography  } from '@mui/material';
 import { green } from '@mui/material/colors';
 import { Flex } from "@radix-ui/themes";
-import Image, { StaticImageData } from 'next/image';
+// import Image, { StaticImageData } from 'next/image';
 import React from 'react';
-import ExpandMoreIcon from '@mui/icons-material/ExpandMore';
-import { Accordion, AccordionSummary, AccordionDetails } from '@mui/material';
 
 import { BusinessColors, config } from "@/lib";
 
-import person1Image from "./assets/juliana.png"
-import person2Image from "./assets/nadja.png"
+// import person1Image from "./assets/juliana.png"
+// import person2Image from "./assets/nadja.png"
 import styles from "./plans.module.css";
 
 const faqData = [
@@ -132,24 +130,24 @@ const plans = [
   }
 ];
 
-function highlightText(text: string, substrings: string[]) {
-  if (!substrings || substrings.length === 0) return text;
+// function highlightText(text: string, substrings: string[]) {
+//   if (!substrings || substrings.length === 0) return text;
 
-  const pattern = substrings
-    .map(str => str.replace(/[.*+?^${}()|[\]\\]/g, '\\$&'))
-    .join('|');
-  const regex = new RegExp(`(${pattern})`, 'gi');
+//   const pattern = substrings
+//     .map(str => str.replace(/[.*+?^${}()|[\]\\]/g, '\\$&'))
+//     .join('|');
+//   const regex = new RegExp(`(${pattern})`, 'gi');
 
-  return text.split(regex).map((part, i) =>
-    substrings.some(sub =>
-      part.toLowerCase() === sub.toLowerCase()
-    ) ? (
-      <strong key={i} style={{color: BusinessColors.Blue}}>{part}</strong>
-    ) : (
-      part
-    )
-  );
-}
+//   return text.split(regex).map((part, i) =>
+//     substrings.some(sub =>
+//       part.toLowerCase() === sub.toLowerCase()
+//     ) ? (
+//       <strong key={i} style={{color: BusinessColors.Blue}}>{part}</strong>
+//     ) : (
+//       part
+//     )
+//   );
+// }
 
 function highlightTextBold(text: string, substrings: string[]) {
   if (!substrings || substrings.length === 0) return text;
@@ -257,80 +255,80 @@ const CardPlan: React.FC<CardPlanProps> = ({ title, items, info }) => {
   );
 };
 
-interface RecommendationCardProps {
-  photo: StaticImageData;
-  name: string;
-  title: string;
-  text: string;
-}
+// interface RecommendationCardProps {
+//   photo: StaticImageData;
+//   name: string;
+//   title: string;
+//   text: string;
+// }
 
-const RecommendationCard: React.FC<RecommendationCardProps> = ({ photo, title, name, text }) => {
-  return (
-    <Paper
-      elevation={0}
-      sx={{
-        backgroundColor: '#1c1c1e',
-        color: '#fff',
-        borderRadius: '12px',
-        padding: '32px 24px 48px',
-        border: '1px solid #444',
-        position: 'relative',
-        maxWidth: 400,
-        boxShadow: '0 0 10px 0 #1976d2',
-        animation: 'shadow-move 2s ease-in-out infinite alternate',
-        '@keyframes shadow-move': {
-          '0%': {
-            boxShadow: '0 0 15px 0 #1976d2',
-          },
-          '100%': {
-            boxShadow: '0 0 15px 3px #1976d2',
-          },
-        },
-      }}
-    >
-      {/* Aspas */}
-      <Box sx={{ fontSize: 120, color: '#fff', position: 'absolute', top: -20, left: 16 }}>
-        “
-      </Box>
+// const RecommendationCard: React.FC<RecommendationCardProps> = ({ photo, title, name, text }) => {
+//   return (
+//     <Paper
+//       elevation={0}
+//       sx={{
+//         backgroundColor: '#1c1c1e',
+//         color: '#fff',
+//         borderRadius: '12px',
+//         padding: '32px 24px 48px',
+//         border: '1px solid #444',
+//         position: 'relative',
+//         maxWidth: 400,
+//         boxShadow: '0 0 10px 0 #1976d2',
+//         animation: 'shadow-move 2s ease-in-out infinite alternate',
+//         '@keyframes shadow-move': {
+//           '0%': {
+//             boxShadow: '0 0 15px 0 #1976d2',
+//           },
+//           '100%': {
+//             boxShadow: '0 0 15px 3px #1976d2',
+//           },
+//         },
+//       }}
+//     >
+//       {/* Aspas */}
+//       <Box sx={{ fontSize: 120, color: '#fff', position: 'absolute', top: -20, left: 16 }}>
+//         “
+//       </Box>
 
-      {/* Título */}
-      <Typography variant="h6" fontWeight="bold" sx={{ mt: 4 }}>
-        {title}
-      </Typography>
+//       {/* Título */}
+//       <Typography variant="h6" fontWeight="bold" sx={{ mt: 4 }}>
+//         {title}
+//       </Typography>
 
-      {/* Texto */}
-      <Typography variant="body2" sx={{ mt: 2, lineHeight: 1.6, whiteSpace: 'pre-line' }}>
-        {text}
-      </Typography>
+//       {/* Texto */}
+//       <Typography variant="body2" sx={{ mt: 2, lineHeight: 1.6, whiteSpace: 'pre-line' }}>
+//         {text}
+//       </Typography>
 
-      {/* Rodapé com imagem e nome */}
-      <Box
-        sx={{
-          position: 'absolute',
-          bottom: -24,
-          left: '50%',
-          transform: 'translateX(-50%)',
-          backgroundColor: '#1c1c1e',
-          border: '1px solid #444',
-          borderRadius: '999px',
-          padding: '4px 12px',
-          display: 'flex',
-          alignItems: 'center',
-          gap: 1,
-        }}
-      >
-        <Image
-          src={photo}
-          alt={name}
-          width={24}
-          height={24}
-          style={{ borderRadius: '50%' }}
-        />
-        <Typography variant="caption" color="#b19cd9">@{name}</Typography>
-      </Box>
-    </Paper>
-  );
-};
+//       {/* Rodapé com imagem e nome */}
+//       <Box
+//         sx={{
+//           position: 'absolute',
+//           bottom: -24,
+//           left: '50%',
+//           transform: 'translateX(-50%)',
+//           backgroundColor: '#1c1c1e',
+//           border: '1px solid #444',
+//           borderRadius: '999px',
+//           padding: '4px 12px',
+//           display: 'flex',
+//           alignItems: 'center',
+//           gap: 1,
+//         }}
+//       >
+//         <Image
+//           src={photo}
+//           alt={name}
+//           width={24}
+//           height={24}
+//           style={{ borderRadius: '50%' }}
+//         />
+//         <Typography variant="caption" color="#b19cd9">@{name}</Typography>
+//       </Box>
+//     </Paper>
+//   );
+// };
 
 const GradientBar: React.FC = () => {
   return (

@@ -1,9 +1,8 @@
 import EmailIcon from '@mui/icons-material/Email';
 import InstagramIcon from '@mui/icons-material/Instagram';
-import PhoneIcon from '@mui/icons-material/Phone';
 import LocationOnIcon from '@mui/icons-material/LocationOn';
-import BusinessIcon from '@mui/icons-material/Business';
-import { Box, IconButton, Paper, Typography, Container, Grid, Divider } from '@mui/material';
+import PhoneIcon from '@mui/icons-material/Phone';
+import { Box, Container, Divider,Grid, IconButton, Paper, Typography } from '@mui/material';
 
 import { Image } from "@/components"
 import { BusinessColors, config } from "@/lib";

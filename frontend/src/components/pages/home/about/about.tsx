@@ -8,7 +8,6 @@ import { BusinessColors } from "@/lib";
 import styles from "./about.module.css";
 import brazilImage from "./assets/brazil.png";
 import heroImage from "./assets/hero2.png";
-import notesImage from "./assets/notes.png";
 import teamImage from "./assets/team.svg";
 
 export function About() {

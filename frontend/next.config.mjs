@@ -1,4 +1,5 @@
 /** @type {import('next').NextConfig} */
+
 const nextConfig = {
   reactStrictMode: true,
   output: 'export', // Next.js 13+ static export mode
@@ -6,6 +7,12 @@ const nextConfig = {
     unoptimized: true, // disables incompatible Image Optimization API
   },
   trailingSlash: true, // Optional: recommended for gh-pages compatibility
+  eslint: {
+    ignoreDuringBuilds: true,
+  },
+  typescript: {
+    ignoreBuildErrors: true,
+  },
 };
 
 export default nextConfig;

@@ -1,4 +1,3 @@
-import { Send as SendIcon } from '@mui/icons-material';
 import { Button, styled } from "@mui/material"
 import { Flex } from "@radix-ui/themes";
 
