@@ -5,7 +5,7 @@ import { Image } from "@/components";
 import { BusinessColors, config } from "@/lib";
 
 import benefitsImg from "./assets/benefits.png"
-import heroImg from "./assets/hero.png"
+import heroImg from "./assets/hero.jpg"
 import styles from "./hero.module.css";
 
 const AnimatedShadowButton = styled(Button)({

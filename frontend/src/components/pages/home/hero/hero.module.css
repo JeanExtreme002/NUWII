@@ -131,8 +131,8 @@
 }
 
 .heroImage {
-  width: calc(2387px * 0.25);
-  height: calc(1545px * 0.25);
+  width: calc(1193px * 0.5);
+  height: calc(772px * 0.5);
   border-radius: 1%;
   border-top-left-radius: 30%;
   border-bottom-right-radius: 10%;
@@ -197,8 +197,8 @@
     justify-content: center;
   }
   .heroImage {
-    width: calc(2387px * 0.25);
-    height: calc(1545px * 0.25);
+    width: calc(1193px * 0.5);
+    height: calc(772px * 0.5);
     border-radius: 5%;
   }
   .rowContainer {
@@ -229,8 +229,8 @@
     padding-bottom: 30px;
   }
   .heroImage {
-    width: calc(2387px * 0.2);
-    height: calc(1545px * 0.2);
+    width: calc(1193px * 0.4);
+    height: calc(772px * 0.4);
     border-radius: 5%;
   }
   .benefitsContainer {
@@ -252,8 +252,8 @@
 
 @media (max-width: 500px) {
   .heroImage {
-    width: calc(2387px * 0.15);
-    height: calc(1545px * 0.15);
+    width: calc(1193px * 0.3);
+    height: calc(772px * 0.3);
   }
   .benefitsImage {
     width: calc(1872px * 0.2);
