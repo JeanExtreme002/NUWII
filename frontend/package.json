@@ -4,6 +4,7 @@
   "scripts": {
   "dev": "next dev",
   "build": "NEXTJS_IGNORE_TYPE_ERRORS=true next build && touch ./out/.nojekyll && echo 'www.nuwii.com.br' > ./out/CNAME",
+  "postbuild": "touch ./out/.nojekyll",
     "start": "next start",
     "lint": "next lint",
     "lint:fix": "next lint --fix",
