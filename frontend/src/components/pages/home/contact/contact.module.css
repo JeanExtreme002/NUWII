@@ -15,8 +15,8 @@
 }
 
 .supportImage {
-  width: calc(1536px * 0.4);
-  height: calc(1024px * 0.4);
+  width: calc(768px * 0.8);
+  height: calc(512px * 0.8);
   cursor: pointer;
   border-radius: 16px;
   transition: transform 0.3s ease;
@@ -33,8 +33,8 @@
 
 @media (max-width: 600px) {
   .supportImage {
-    width: calc(1536px * 0.3);
-    height: calc(1024px * 0.3);
+    width: calc(768px * 0.6);
+    height: calc(512px * 0.6);
   }
   .copyright {
     font-size: 12px;
@@ -45,7 +45,7 @@
 
 @media (max-width: 450px) {
   .supportImage {
-    width: calc(1536px * 0.25);
-    height: calc(1024px * 0.25);
+    width: calc(768px * 0.5);
+    height: calc(512px * 0.5);
   }
 }

@@ -157,8 +157,8 @@
 }
 
 .brazilImage {
-  width: calc(1536px * 0.5);
-  height: calc(1024px * 0.5);
+  width: 768px;
+  height: 512px;
 }
 
 .servicesButton {
@@ -188,8 +188,8 @@
     height: calc(1024px * 0.4);
   }
   .brazilImage {
-    width: calc(1536px * 0.35);
-    height: calc(1024px * 0.35);
+    width: calc(768px * 0.7);
+    height: calc(512px * 0.7);
   }
 }
 
@@ -220,8 +220,8 @@
     height: calc(1024px * 0.3);
   }
   .brazilImage {
-    width: calc(1536px * 0.25);
-    height: calc(1024px * 0.25);
+    width: calc(768px * 0.5);
+    height: calc(512px * 0.5);
   }
   .servicesButton {
     font-size: 10px;
@@ -262,7 +262,7 @@
     font-size: 20px;
   }
   .brazilImage {
-    width: calc(1536px * 0.2);
-    height: calc(1024px * 0.2);
+    width: calc(768px * 0.4);
+    height: calc(512px * 0.4);
   }
 }

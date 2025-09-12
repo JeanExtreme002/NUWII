@@ -7,8 +7,8 @@ import { ReactNode } from "react";
 import { Image } from "@/components";
 import { BusinessColors } from "@/lib";
 
-import investmentImage from "./assets/investment.png"
-import noteImage from "./assets/note.png"
+import investmentImage from "./assets/investment.jpg"
+import noteImage from "./assets/note.jpg"
 import styles from "./services.module.css";
 
 const cards = [
