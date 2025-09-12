@@ -3,7 +3,7 @@
   "version": "1.0.0",
   "scripts": {
   "dev": "next dev",
-  "build": "NEXTJS_IGNORE_TYPE_ERRORS=true next build",
+  "build": "NEXTJS_IGNORE_TYPE_ERRORS=true next build && touch ./out/.nojekyll && echo 'www.nuwii.com.br' > ./out/CNAME",
     "start": "next start",
     "lint": "next lint",
     "lint:fix": "next lint --fix",
