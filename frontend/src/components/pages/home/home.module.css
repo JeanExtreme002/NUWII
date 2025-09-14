@@ -1,3 +1,33 @@
+.floatingTopButton:focus {
+  outline: none;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.18);
+}
+/* Botão flutuante para voltar ao topo */
+
+.floatingTopButton {
+  position: fixed;
+  right: 2rem;
+  bottom: 2rem;
+  z-index: 1000;
+  background: rgba(30, 30, 30, 0.5);
+  color: #fff;
+  border: none;
+  border-radius: 50%;
+  width: 48px;
+  height: 48px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 1.5rem;
+  cursor: pointer;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.12);
+  transition: background 0.2s, transform 0.2s;
+}
+
+.floatingTopButton:hover {
+  background: rgba(30, 30, 30, 0.9);
+  transform: translateY(-4px) scale(1.05);
+}
 .root {
   margin: 0;
   gap: 0;

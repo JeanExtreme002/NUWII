@@ -21,7 +21,7 @@ export function HomePage() {
           <section className={styles.section} id="home">
             <Header />
           </section>
-          <main className={ styles.homePage }>
+          <main className={styles.homePage}>
             <Flex className={styles.root} direction="column">
               <Hero />
               <section className={styles.section} id="about">
@@ -37,6 +37,15 @@ export function HomePage() {
                 <Contact />
               </section>
             </Flex>
+            {/* Botão flutuante para voltar ao topo */}
+            <button
+              className={styles.floatingTopButton}
+              aria-label="Voltar ao topo"
+              onClick={() => window.scrollTo({ top: 0, behavior: "smooth" })}
+            >
+              {/* Ícone seta para cima, sem texto */}
+              <span style={{fontSize: "1.5rem", lineHeight: 1}}>↑</span>
+            </button>
           </main>
         </>
       )}
