@@ -1,11 +1,12 @@
-import { Button, styled } from "@mui/material"
-import { Flex } from "@radix-ui/themes";
 
+import { useEffect, useState } from "react";
+import { Button, styled } from "@mui/material";
+import { Flex } from "@radix-ui/themes";
 import { Image } from "@/components";
 import { BusinessColors, config } from "@/lib";
-
-import benefitsImg from "./assets/benefits.png"
-import heroImg from "./assets/hero.jpg"
+import { LoadingScreen } from "./LoadingScreen";
+import benefitsImg from "./assets/benefits.png";
+import heroImg from "./assets/hero.jpg";
 import styles from "./hero.module.css";
 
 const AnimatedShadowButton = styled(Button)({
@@ -46,9 +47,69 @@ function highlightText(text: string, substrings: string[]) {
   );
 }
 
-export function Hero() {
+interface HeroProps {
+  onLoaded?: () => void;
+}
 
-  const description1 = `Nós transformamos números em crescimento com propósito...`
+export function Hero({ onLoaded }: HeroProps) {
+  // Não renderiza loading internamente, só chama onLoaded
+
+  // Checa se fontes estão carregadas
+  function checkFontsLoaded() {
+    if (document.fonts) {
+      return Promise.all([
+        document.fonts.load('1em LinearGrotesk-Black'),
+        document.fonts.load('1em LinearGrotesk-Bold'),
+        document.fonts.load('1em LinearGrotesk-Medium'),
+        document.fonts.load('1em LinearGrotesk-Light'),
+      ]);
+    }
+    return Promise.resolve();
+  }
+
+  useEffect(() => {
+    let imagesLoaded = false;
+    let fontsLoaded = false;
+    let cssLoaded = false;
+
+    // Imagens
+    const img1 = new window.Image();
+    const img2 = new window.Image();
+    img1.src = typeof benefitsImg === 'string' ? benefitsImg : benefitsImg.src;
+    img2.src = typeof heroImg === 'string' ? heroImg : heroImg.src;
+    img1.onload = img2.onload = () => {
+      if (!imagesLoaded && img1.complete && img2.complete) {
+        imagesLoaded = true;
+        checkReady();
+      }
+    };
+
+    // Fontes
+    checkFontsLoaded().then(() => {
+      fontsLoaded = true;
+      checkReady();
+    });
+
+    // CSS
+    const cssCheck = () => {
+      // Verifica se alguma classe do hero.module.css está aplicada
+      if (document.querySelector(`.${styles.root}`)) {
+        cssLoaded = true;
+        checkReady();
+      } else {
+        setTimeout(cssCheck, 50);
+      }
+    };
+    cssCheck();
+
+    function checkReady() {
+      if (imagesLoaded && fontsLoaded && cssLoaded) {
+        if (onLoaded) onLoaded();
+      }
+    }
+  }, []);
+
+  const description1 = `Nós transformamos números em crescimento com propósito...`;
   const description2 = `Acreditamos que cada empresa carrega uma história única. E é com responsabilidade, conhecimento e tecnologia que ajudamos você a escrever os próximos capítulos.`;
   const description3 = `Oferecemos soluções empresariais alinhadas aos seus propósitos, com menos burocracia e mais eficiência, para que possa focar no que realmente importa: O crescimento da sua empresa.`;
 
@@ -59,8 +120,8 @@ export function Hero() {
           Todos querem <span style={{color: BusinessColors.Blue}}>chegar</span> ao topo...
         </span>
       </span>
-    )
-  }
+    );
+  };
 
   return (
     <Flex className={ styles.root }>
@@ -77,13 +138,16 @@ export function Hero() {
             </div>
             <div className={styles.benefitsContainer}>
               <div className={ styles.mobileButton }>
-                <AnimatedShadowButton
-                  variant="outlined" 
-                  target="_blank"
+                <a
                   href={`https://wa.me/${config.phoneNumber}?text=Olá! Venho pelo site da NUWII, e possuo interesse em saber mais sobre os serviços :)`}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  style={{ textDecoration: "none" }}
                 >
-                  <span className={ styles.mobileButtonText }>QUERO DESCOMPLICAR MINHA CONTABILIDADE</span>
-                </AnimatedShadowButton>
+                  <AnimatedShadowButton variant="outlined">
+                    <span className={ styles.mobileButtonText }>QUERO DESCOMPLICAR MINHA CONTABILIDADE</span>
+                  </AnimatedShadowButton>
+                </a>
               </div>
               <Image className={styles.benefitsImage} src={benefitsImg} alt="Benefits"/>
             </div>
@@ -94,13 +158,16 @@ export function Hero() {
             </div>
             <Image className={styles.heroImage} src={heroImg} alt="Hero"/>
             <div className={ styles.desktopButton }>
-              <AnimatedShadowButton
-                variant="outlined" 
-                target="_blank"
+              <a
                 href={`https://wa.me/${config.phoneNumber}?text=Olá! Venho pelo site da NUWII, e possuo interesse em saber mais sobre os serviços :)`}
+                target="_blank"
+                rel="noopener noreferrer"
+                style={{ textDecoration: "none" }}
               >
-                QUERO DESCOMPLICAR MINHA CONTABILIDADE
-              </AnimatedShadowButton>
+                <AnimatedShadowButton variant="outlined">
+                  QUERO DESCOMPLICAR MINHA CONTABILIDADE
+                </AnimatedShadowButton>
+              </a>
             </div>
           </div>
         </Flex>
