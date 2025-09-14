@@ -37,9 +37,8 @@ html, body {
     margin: 0;
     width: 100%;
     overflow-x: hidden;
-    height: 100%;
     padding: 0;
-    overscroll-behavior-y: contain;
+    overscroll-behavior-y: none;
 }
 
 #__next, main {
